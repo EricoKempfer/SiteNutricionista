@@ -8,6 +8,7 @@ import { FaHeartPulse } from "react-icons/fa6";
 import { MdOutlineBloodtype } from "react-icons/md";
 import { IoWomanOutline } from "react-icons/io5";
 import { LuSalad } from "react-icons/lu";
+import { GiFruitBowl } from "react-icons/gi";
 import { VscVerifiedFilled } from "react-icons/vsc";
 import { AspectRatio } from "@chakra-ui/react"
 import { Flex, Link } from '@chakra-ui/react';
@@ -201,7 +202,7 @@ export default function Home() {
               e promoção à saúde por meio da alimentação saudável,
             </Text>
             <Text fontFamily={"Poppins"} fontSize={"18px"} mb="0" fontWeight={"500"} color={"#5C637C"} >
-              com foco no controle do diabetes, emagrecimento saudável e saúde gastrointestinal.
+              com foco no controle do diabetes, emagrecimento saudável e saúde feminina.
             </Text>
             <Text mt="2%" fontFamily={"Poppins"} fontSize={"18px"} mb="0" fontWeight={"500"} color={"#5C637C"} >
               Vamos encontrar juntos a melhor maneira para você conquistar mais saúde através da alimentação, de uma forma simples e prática, atingindo seus objetivos e respeitando seus gostos alimentares!            </Text>
@@ -214,7 +215,7 @@ export default function Home() {
             <Text fontFamily={"Poppins"} fontSize={"42px"} fontWeight={"700"} textShadow="2px 2px 4px rgba(0,0,0,0.1)" color={"#93b2bd"}>Especialidades</Text>
           </Box>
           <HStack h="30vh" w="80%" justifyContent={"space-between"}>
-            <VStack display="flex" justifyContent={"center"} alignItems={"center"} >
+            {/* <VStack display="flex" justifyContent={"center"} alignItems={"center"} >
               <Box boxShadow={`
         0 8px 24px rgba(147, 178, 189, 0.3),
         0 12px 48px rgba(147, 178, 189, 0.2),
@@ -227,35 +228,7 @@ export default function Home() {
                 <LuSalad color="white" size="3em" />
               </Box>
               <Text>Alimentação Saudável</Text>
-            </VStack>
-            <VStack display="flex" justifyContent={"center"} alignItems={"center"} >
-              <Box boxShadow={`
-        0 8px 24px rgba(147, 178, 189, 0.3),
-        0 12px 48px rgba(147, 178, 189, 0.2),
-        inset 0 2px 4px rgba(255, 255, 255, 0.1)
-        `}
-                transition="all 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
-                _hover={{
-                  transform: "scale(1.1)",
-                }} h="80px" w="80px" borderRadius={"50px"} display="flex" justifyContent={"center"} alignItems={"center"} bgColor="white">
-                <IoWomanOutline color="#93B2BD" size="3em" />
-              </Box>
-              <Text>Saúde Feminina</Text>
-            </VStack>
-            <VStack display="flex" justifyContent={"center"} alignItems={"center"} >
-              <Box boxShadow={`
-        0 8px 24px rgba(147, 178, 189, 0.3),
-        0 12px 48px rgba(147, 178, 189, 0.2),
-        inset 0 2px 4px rgba(255, 255, 255, 0.1)
-        `}
-                transition="all 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
-                _hover={{
-                  transform: "scale(1.1)",
-                }} h="80px" w="80px" borderRadius={"50px"} display="flex" justifyContent={"center"} alignItems={"center"} bgColor="#93B2BD">
-                <TbTreadmill color="white" size="3em" />
-              </Box>
-              <Text>Nutrição Esportiva</Text>
-            </VStack>
+            </VStack> */}
             <VStack display="flex" justifyContent={"center"} alignItems={"center"} >
               <Box boxShadow={`
         0 8px 24px rgba(147, 178, 189, 0.3),
@@ -285,6 +258,49 @@ export default function Home() {
               </Box>
               <Text>Emagrecimento Saudável</Text>
             </VStack>
+            <VStack display="flex" justifyContent={"center"} alignItems={"center"} >
+              <Box boxShadow={`
+        0 8px 24px rgba(147, 178, 189, 0.3),
+        0 12px 48px rgba(147, 178, 189, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1)
+        `}
+                transition="all 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
+                _hover={{
+                  transform: "scale(1.1)",
+                }} h="80px" w="80px" borderRadius={"50px"} display="flex" justifyContent={"center"} alignItems={"center"} bgColor="white">
+                <IoWomanOutline color="#93B2BD" size="3em" />
+              </Box>
+              <Text>Saúde Feminina</Text>
+            </VStack>
+            <VStack display="flex" justifyContent={"center"} alignItems={"center"} >
+              <Box boxShadow={`
+        0 8px 24px rgba(147, 178, 189, 0.3),
+        0 12px 48px rgba(147, 178, 189, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1)
+        `}
+                transition="all 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
+                _hover={{
+                  transform: "scale(1.1)",
+                }} h="80px" w="80px" borderRadius={"50px"} display="flex" justifyContent={"center"} alignItems={"center"} bgColor="#93B2BD">
+                <GiFruitBowl color="white" size="3em" />
+              </Box>
+              <Text>Saúde Gastrointestinal</Text>
+            </VStack>
+            {/* <VStack display="flex" justifyContent={"center"} alignItems={"center"} >
+              <Box boxShadow={`
+        0 8px 24px rgba(147, 178, 189, 0.3),
+        0 12px 48px rgba(147, 178, 189, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.1)
+        `}
+                transition="all 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
+                _hover={{
+                  transform: "scale(1.1)",
+                }} h="80px" w="80px" borderRadius={"50px"} display="flex" justifyContent={"center"} alignItems={"center"} bgColor="white">
+                <MdOutlineBloodtype color="#93B2BD" size="3em" />
+              </Box>
+              <Text >Diabetes</Text>
+            </VStack> */}
+            
           </HStack>
         </VStack>
       </Box>
@@ -470,7 +486,7 @@ export default function Home() {
       </Box>
       <Text mt="1%" textAlign={"center"} fontFamily={"Poppins"} fontSize={"42px"} fontWeight={"700"} textShadow="2px 2px 4px rgba(0,0,0,0.1)" color={"#93b2bd"}>Localização</Text>
       <Box id="local" mt="1%" display="flex" alignItems={"center"} justifyContent={"center"} w="100%">
-        <AspectRatio maxH="460px" display="flex" alignItems={"center"} justifyContent={"center"} w="100%" ratio={16 / 9}>
+        <AspectRatio maxH="460px" display="flex" alignItems={"center"} justifyContent={"center"} w="80%" ratio={16 / 9}>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.732945534991!2d-52.61751729999999!3d-27.101715199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b42079a39e0d%3A0xedd01f5bcc6c3d69!2sNutricionista%20Ludiana%20Campos!5e0!3m2!1spt-BR!2sbr!4v1746400402989!5m2!1spt-BR!2sbr" size="sm" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" />
         </AspectRatio>
       </Box>
