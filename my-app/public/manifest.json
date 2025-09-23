@@ -1,0 +1,36 @@
+{
+  "name": "Nutricionista Ludiana Campos",
+  "short_name": "Nutri Ludiana",
+  "description": "Nutricionista clínica especializada em emagrecimento saudável, diabetes e saúde feminina em Chapecó, Santa Catarina.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#93B2BD",
+  "icons": [
+    {
+      "src": "/logonutr.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/logonutr.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable any"
+    }
+  ],
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": ["health", "nutrition", "medical"],
+  "screenshots": [
+    {
+      "src": "/BannerNutricionista.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ]
+}

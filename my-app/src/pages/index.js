@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 import HomeMobile from "./homeMobile";
 import HomePc from "./homePc";
+import SEO from "../components/SEO";
 
 export default function Demo() {
   const router = useRouter()
@@ -30,6 +31,7 @@ export default function Demo() {
 
   return (
     <Box>
+      <SEO />
       {screenWidth < 1200 ? (
         <HomeMobile/>
       ) : (

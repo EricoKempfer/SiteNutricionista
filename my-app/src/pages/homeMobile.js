@@ -58,7 +58,8 @@ export default function Home() {
           <Image
             h="35px"
             src="/logonutr.jpg"
-            alt="Ludiana Campos Nutricionista"
+            alt="Logo Nutricionista Ludiana Campos - CRN 10 9645 - Chapecó SC"
+            loading="eager"
           />
 
           {/* Botão Agendar na direita */}
@@ -96,11 +97,11 @@ export default function Home() {
             boxShadow="md"
             p="4"
           >
-            <Text cursor="pointer" onClick={() => handleScroll('inicio')} textAlign="center">Início</Text>
-            <Text cursor="pointer" onClick={() => handleScroll('sobre-mim')} textAlign="center">Sobre Mim</Text>
-            <Text cursor="pointer" onClick={() => handleScroll('especialidades')} textAlign="center">Especialidades</Text>
-            <Text cursor="pointer" onClick={() => handleScroll('depoimentos')} textAlign="center">Depoimentos</Text>
-            <Text cursor="pointer" onClick={() => handleScroll('local')} textAlign="center">Local</Text>
+            <Text cursor="pointer" onClick={() => handleScroll('inicio')} textAlign="center" role="menuitem">Início</Text>
+            <Text cursor="pointer" onClick={() => handleScroll('sobre-mim')} textAlign="center" role="menuitem">Sobre Mim</Text>
+            <Text cursor="pointer" onClick={() => handleScroll('especialidades')} textAlign="center" role="menuitem">Especialidades</Text>
+            <Text cursor="pointer" onClick={() => handleScroll('depoimentos')} textAlign="center" role="menuitem">Depoimentos</Text>
+            <Text cursor="pointer" onClick={() => handleScroll('local')} textAlign="center" role="menuitem">Local</Text>
             <Link 
               href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20mais%20informações%20sobre%20o%20serviço%20de%20acompanhamento%20nutricional."
               target="_blank"
@@ -148,8 +149,8 @@ export default function Home() {
           gap={"0px"}
           textAlign="center"
         >
-          <Text fontFamily={"Poppins"} fontSize={"28px"} mb="0" fontWeight={"300"} color={"cyan.900"} textShadow="2px 2px 4px rgba(0,0,0,0.3)">Nutricionista</Text>
-          <Text fontFamily={"Poppins"} fontSize={"32px"} fontWeight={"700"} color={"cyan.900"} textShadow="2px 2px 4px rgba(0,0,0,0.3)">Ludiana Campos</Text>
+          <Text as="h2" fontFamily={"Poppins"} fontSize={"28px"} mb="0" fontWeight={"300"} color={"cyan.900"} textShadow="2px 2px 4px rgba(0,0,0,0.3)">Nutricionista</Text>
+          <Text as="h1" fontFamily={"Poppins"} fontSize={"32px"} fontWeight={"700"} color={"cyan.900"} textShadow="2px 2px 4px rgba(0,0,0,0.3)">Ludiana Campos</Text>
           <Text mt="3%" fontFamily={"Poppins"} fontSize={"16px"} mb="0" fontWeight={"500"} color={"cyan.800"} textAlign="center" px="2">
             Conquiste mais saúde através da alimentação!
           </Text>
@@ -163,7 +164,7 @@ export default function Home() {
       {/* Seção Sobre Mim */}
       <VStack id="sobre-mim" mt="6" mb="6" w="100%" spacing="6" px="4">
         <VStack spacing="4" w="100%">
-          <Text fontFamily={"Poppins"} fontSize={"32px"} fontWeight={"600"} textShadow="2px 2px 4px rgba(0,0,0,0.1)" color={"#93b2bd"} textAlign="center">
+          <Text as="h2" fontFamily={"Poppins"} fontSize={"32px"} fontWeight={"600"} textShadow="2px 2px 4px rgba(0,0,0,0.1)" color={"#93b2bd"} textAlign="center">
             Sobre Mim
           </Text>
           <Box
@@ -181,7 +182,8 @@ export default function Home() {
           maxW="300px"
           src="/nutriciSobreMim3.jpg"
           borderRadius="35% 65% 35% 65% / 35% 65% 35% 65%"
-          alt="Loading..."
+          alt="Ludiana Campos - Nutricionista clínica especializada em emagrecimento, diabetes e saúde feminina em Chapecó SC"
+          loading="lazy"
           boxShadow={`
             0 8px 24px rgba(147, 178, 189, 0.5),
             0 12px 48px rgba(147, 178, 189, 0.3),
@@ -211,7 +213,7 @@ export default function Home() {
       {/* Seção Especialidades */}
       <Box id="especialidades" w="100%" py="8" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
         <VStack spacing="8" w="100%" px="4">
-          <Text fontFamily={"Poppins"} fontSize={"32px"} fontWeight={"700"} textShadow="2px 2px 4px rgba(0,0,0,0.1)" color={"#93b2bd"} textAlign="center">
+          <Text as="h2" fontFamily={"Poppins"} fontSize={"32px"} fontWeight={"700"} textShadow="2px 2px 4px rgba(0,0,0,0.1)" color={"#93b2bd"} textAlign="center">
             Especialidades
           </Text>
 
@@ -310,7 +312,7 @@ export default function Home() {
 
       {/* Seção Depoimentos */}
       <VStack  spacing="6" py="8">
-        <Text textAlign="center" fontFamily="Poppins" fontSize="32px" fontWeight="700" textShadow="2px 2px 4px rgba(0,0,0,0.1)" color="#93b2bd">
+        <Text as="h2" textAlign="center" fontFamily="Poppins" fontSize="32px" fontWeight="700" textShadow="2px 2px 4px rgba(0,0,0,0.1)" color="#93b2bd">
           Depoimentos
         </Text>
 
@@ -359,9 +361,10 @@ export default function Home() {
 
               <Image
                 src="/googleIcon.png"
-                alt="Google Ícone"
+                alt="Google Reviews - Avaliações da Nutricionista Ludiana Campos"
                 w="30%"
                 cursor="pointer"
+                loading="lazy"
               />
             </VStack>
 
@@ -435,7 +438,7 @@ export default function Home() {
 
       {/* Seção Localização */}
       <VStack spacing="6" py="8" px="4">
-        <Text textAlign="center" fontFamily="Poppins" fontSize="32px" fontWeight="700" textShadow="2px 2px 4px rgba(0,0,0,0.1)" color="#93b2bd">
+        <Text as="h2" textAlign="center" fontFamily="Poppins" fontSize="32px" fontWeight="700" textShadow="2px 2px 4px rgba(0,0,0,0.1)" color="#93b2bd">
           Localização
         </Text>
 
@@ -455,6 +458,7 @@ export default function Home() {
       {/* Seção Redes Sociais */}
       <VStack spacing="6" py="8" px="4">
         <Text
+          as="h2"
           textAlign="center"
           fontFamily="Poppins"
           fontSize="32px"
