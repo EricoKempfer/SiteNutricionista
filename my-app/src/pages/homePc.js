@@ -41,7 +41,7 @@ export default function Home() {
         }}
       >
         <Link
-          href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20gostaria%20de%20agendar%20uma%20consulta%20nutricional."
+          href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20mais%20informações%20sobre%20o%20serviço%20de%20acompanhamento%20nutricional."
           target="_blank"
           _hover={{ textDecoration: "none" }}
         >
@@ -121,7 +121,7 @@ export default function Home() {
             <FaWhatsapp color="#93B2BD" size="1.5em" />
             <FaFacebook color="#93B2BD" size="1.5em" /> */}
           <Link
-            href="https://wa.me/+554998235398?text=Olá%20Ludiana,%20gostaria%20de%20agendar%20uma%20consulta%20nutricional."
+            href="https://wa.me/+554998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20mais%20informações%20sobre%20o%20serviço%20de%20acompanhamento%20nutricional."
             isExternal
             _hover={{ textDecoration: "none" }}
           >
@@ -399,10 +399,9 @@ export default function Home() {
           {[
             {
               name: "Simone Pinheiro Soares",
-              date: "2024-04-03",
+              date: "2024-08-05",
               avatar: "https://lh3.googleusercontent.com/a-/ALV-UjX4eB7AuqDIg4KaU4hkSET8RjUO1Y3NXYfw_eJRAGZUVUEzTq0=s64-c-rp-mo-br100",
               text: "Maravilhosa, excelente profissional, acolhedora, ética, com uma bagagem teórica e prática impecável, que faz toda a diferença seus manejos clínicos...",
-              link: "https://maps.app.goo.gl/ZE2NeFxhj2q5w8Ad8"
             },
             {
               name: "Camila de Assis Galan",
@@ -411,11 +410,10 @@ export default function Home() {
               text: "Nutri excelente! Super indico! 🥰🫶🏼"
             },
             {
-              name: "Simone Pinheiro Soares",
-              date: "2024-04-03",
-              avatar: "https://lh3.googleusercontent.com/a-/ALV-UjX4eB7AuqDIg4KaU4hkSET8RjUO1Y3NXYfw_eJRAGZUVUEzTq0=s64-c-rp-mo-br100",
-              text: "Maravilhosa, excelente profissional, acolhedora, ética, com uma bagagem teórica e prática impecável, que faz toda a diferença seus manejos clínicos...",
-              link: "https://maps.app.goo.gl/ZE2NeFxhj2q5w8Ad8"
+              name: "Jucemara Silva",
+              date: "2023-10-09",
+              avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWg49X8Ov-6sfjPO2txU-qLQMO3RozQ99P6l9EE4v-BG0EcqzWQ=s64-c-rp-mo-br100&quot",
+              text: "Ótima nutri! Super indico",
             }
           ].map((testimonial, index) => (
             <VStack
@@ -560,7 +558,7 @@ export default function Home() {
 
           {/* WhatsApp Box */}
           <Link
-            href="https://wa.me"
+            href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20mais%20informações%20sobre%20o%20serviço%20de%20acompanhamento%20nutricional."
             target="_blank"
             _hover={{ textDecoration: "none" }}
             aria-label="WhatsApp"

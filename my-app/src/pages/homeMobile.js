@@ -63,7 +63,7 @@ export default function Home() {
 
           {/* Botão Agendar na direita */}
           <Link 
-            href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20gostaria%20de%20agendar%20uma%20consulta%20nutricional."
+            href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20mais%20informações%20sobre%20o%20serviço%20de%20acompanhamento%20nutricional."
             target="_blank"
             _hover={{ textDecoration: "none" }}
           >
@@ -102,7 +102,7 @@ export default function Home() {
             <Text cursor="pointer" onClick={() => handleScroll('depoimentos')} textAlign="center">Depoimentos</Text>
             <Text cursor="pointer" onClick={() => handleScroll('local')} textAlign="center">Local</Text>
             <Link 
-              href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20gostaria%20de%20agendar%20uma%20consulta%20nutricional."
+              href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20mais%20informações%20sobre%20o%20serviço%20de%20acompanhamento%20nutricional."
               target="_blank"
               _hover={{ textDecoration: "none" }}
               w="100%"
@@ -505,7 +505,7 @@ export default function Home() {
 
           {/* WhatsApp */}
           <Link
-            href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20gostaria%20de%20conversar%20sobre%20nutrição."
+            href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20mais%20informações%20sobre%20o%20serviço%20de%20acompanhamento%20nutricional."
             target="_blank"
             _hover={{ textDecoration: "none" }}
             aria-label="WhatsApp"
@@ -591,7 +591,7 @@ export default function Home() {
         }}
       >
         <Link 
-          href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20gostaria%20de%20agendar%20uma%20consulta%20nutricional."
+          href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20mais%20informações%20sobre%20o%20serviço%20de%20acompanhamento%20nutricional."
           target="_blank"
           _hover={{ textDecoration: "none" }}
         >
