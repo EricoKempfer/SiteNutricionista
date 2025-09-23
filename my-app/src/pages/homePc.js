@@ -40,27 +40,33 @@ export default function Home() {
           animation: "pulse 5s infinite ease-in-out",
         }}
       >
-        <HStack
-          _hover={{
-            bgColor: "#3F4971",
-            scale: 1.10,
-          }}
-          style={{
-            transition: "0.8s all",
-          }}
-          justifyContent={"space-between"}
-          bgColor="#93B2BD"
-          p="3"
-          borderRadius="50px"
+        <Link
+          href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20gostaria%20de%20agendar%20uma%20consulta%20nutricional."
+          target="_blank"
+          _hover={{ textDecoration: "none" }}
         >
-          <FaWhatsapp size="1.5em" color="white" mr="10%" />
-          <Text
-            fontWeight={"bold"}
-            color="white"
+          <HStack
+            _hover={{
+              bgColor: "#3F4971",
+              scale: 1.10,
+            }}
+            style={{
+              transition: "0.8s all",
+            }}
+            justifyContent={"space-between"}
+            bgColor="#93B2BD"
+            p="3"
+            borderRadius="50px"
           >
-            Agende sua Consulta
-          </Text>
-        </HStack>
+            <FaWhatsapp size="1.5em" color="white" mr="10%" />
+            <Text
+              fontWeight={"bold"}
+              color="white"
+            >
+              Agende sua Consulta
+            </Text>
+          </HStack>
+        </Link>
       </Float>
       <style>
         {`
@@ -114,15 +120,21 @@ export default function Home() {
           {/* <FaInstagram color="#93B2BD" size="1.5em" />
             <FaWhatsapp color="#93B2BD" size="1.5em" />
             <FaFacebook color="#93B2BD" size="1.5em" /> */}
-          <Button variant={"subtle"} color={"#93B2BD"} borderRadius="50px" bgColor={"transparent"} borderColor={"#93B2BD"}
-            _hover={{
-              bgColor: "#93B2BD",
-              color: "white",
-              transition: "0.3s all"
-            }}
+          <Link
+            href="https://wa.me/+554998235398?text=Olá%20Ludiana,%20gostaria%20de%20agendar%20uma%20consulta%20nutricional."
+            isExternal
+            _hover={{ textDecoration: "none" }}
           >
-            Agende sua Consulta
-          </Button>
+            <Button variant={"subtle"} color={"#93B2BD"} borderRadius="50px" bgColor={"transparent"} borderColor={"#93B2BD"}
+              _hover={{
+                bgColor: "#93B2BD",
+                color: "white",
+                transition: "0.3s all"
+              }}
+            >
+              Agende sua Consulta
+            </Button>
+          </Link>
         </HStack>
       </HStack>
       <VStack
@@ -501,7 +513,7 @@ export default function Home() {
         >
           {/* Instagram Box */}
           <Link
-            href="https://instagram.com"
+            href="https://www.instagram.com/nutriludiana"
             target="_blank"
             _hover={{ textDecoration: "none" }}
             aria-label="Instagram"
@@ -596,7 +608,7 @@ export default function Home() {
 
           {/* Facebook Box */}
           <Link
-            href="https://facebook.com"
+            href="https://www.facebook.com/share/1GRdgdEPzt/"
             target="_blank"
             _hover={{ textDecoration: "none" }}
             aria-label="Facebook"

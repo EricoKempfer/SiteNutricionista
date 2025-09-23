@@ -62,21 +62,27 @@ export default function Home() {
           />
 
           {/* Botão Agendar na direita */}
-          <Button
-            variant="outline"
-            color="#93B2BD"
-            borderColor="#93B2BD"
-            size="sm"
-            fontSize="xs"
-            borderRadius={"50px"}
-            px="3"
-            _hover={{
-              bgColor: "#93B2BD",
-              color: "white",
-            }}
+          <Link 
+            href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20gostaria%20de%20agendar%20uma%20consulta%20nutricional."
+            target="_blank"
+            _hover={{ textDecoration: "none" }}
           >
-            Consultar
-          </Button>
+            <Button
+              variant="outline"
+              color="#93B2BD"
+              borderColor="#93B2BD"
+              size="sm"
+              fontSize="xs"
+              borderRadius={"50px"}
+              px="3"
+              _hover={{
+                bgColor: "#93B2BD",
+                color: "white",
+              }}
+            >
+              Consultar
+            </Button>
+          </Link>
         </HStack>
 
         {/* Menu Mobile */}
@@ -95,18 +101,26 @@ export default function Home() {
             <Text cursor="pointer" onClick={() => handleScroll('especialidades')} textAlign="center">Especialidades</Text>
             <Text cursor="pointer" onClick={() => handleScroll('depoimentos')} textAlign="center">Depoimentos</Text>
             <Text cursor="pointer" onClick={() => handleScroll('local')} textAlign="center">Local</Text>
-            <Button
-              variant="outline"
-              color="#93B2BD"
-              borderColor="#93B2BD"
-              size="sm"
-              _hover={{
-                bgColor: "#93B2BD",
-                color: "white",
-              }}
+            <Link 
+              href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20gostaria%20de%20agendar%20uma%20consulta%20nutricional."
+              target="_blank"
+              _hover={{ textDecoration: "none" }}
+              w="100%"
             >
-              Agende sua Consulta
-            </Button>
+              <Button
+                variant="outline"
+                color="#93B2BD"
+                borderColor="#93B2BD"
+                size="sm"
+                w="100%"
+                _hover={{
+                  bgColor: "#93B2BD",
+                  color: "white",
+                }}
+              >
+                Agende sua Consulta
+              </Button>
+            </Link>
           </VStack>
         )}
       </Box>
@@ -454,7 +468,7 @@ export default function Home() {
         <VStack spacing="4" w="100%">
           {/* Instagram */}
           <Link
-            href="https://instagram.com"
+            href="https://www.instagram.com/nutriludiana?igsh=MWQ0Zmg2cTV4M2lrZg=="
             target="_blank"
             _hover={{ textDecoration: "none" }}
             aria-label="Instagram"
@@ -491,7 +505,7 @@ export default function Home() {
 
           {/* WhatsApp */}
           <Link
-            href="https://wa.me"
+            href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20gostaria%20de%20conversar%20sobre%20nutrição."
             target="_blank"
             _hover={{ textDecoration: "none" }}
             aria-label="WhatsApp"
@@ -528,7 +542,7 @@ export default function Home() {
 
           {/* Facebook */}
           <Link
-            href="https://facebook.com"
+            href="https://www.facebook.com/share/1GRdgdEPzt/"
             target="_blank"
             _hover={{ textDecoration: "none" }}
             aria-label="Facebook"
@@ -564,6 +578,64 @@ export default function Home() {
           </Link>
         </VStack>
       </VStack>
+
+      {/* Botão flutuante WhatsApp */}
+      <Float
+        offsetX="5%"
+        offsetY="10"
+        zIndex={100}
+        position={"fixed"}
+        placement={"bottom-end"}
+        style={{
+          animation: "pulse 5s infinite ease-in-out",
+        }}
+      >
+        <Link 
+          href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20gostaria%20de%20agendar%20uma%20consulta%20nutricional."
+          target="_blank"
+          _hover={{ textDecoration: "none" }}
+        >
+          <HStack
+            _hover={{
+              bgColor: "#3F4971",
+              scale: 1.05,
+            }}
+            style={{
+              transition: "0.8s all",
+            }}
+            justifyContent={"center"}
+            bgColor="#93B2BD"
+            p="2"
+            borderRadius="50px"
+            fontSize="sm"
+          >
+            <FaWhatsapp size="1.2em" color="white" />
+            <Text
+              fontWeight={"bold"}
+              color="white"
+              fontSize="sm"
+            >
+              Consulta
+            </Text>
+          </HStack>
+        </Link>
+      </Float>
+
+      <style>
+        {`
+          @keyframes pulse {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.05);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+        `}
+      </style>
     </Box>
   );
 }
