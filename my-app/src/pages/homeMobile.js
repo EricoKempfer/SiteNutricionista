@@ -579,63 +579,6 @@ export default function Home() {
         </VStack>
       </VStack>
 
-      {/* Botão flutuante WhatsApp */}
-      <Float
-        offsetX="5%"
-        offsetY="10"
-        zIndex={100}
-        position={"fixed"}
-        placement={"bottom-end"}
-        style={{
-          animation: "pulse 5s infinite ease-in-out",
-        }}
-      >
-        <Link 
-          href="https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20mais%20informações%20sobre%20o%20serviço%20de%20acompanhamento%20nutricional."
-          target="_blank"
-          _hover={{ textDecoration: "none" }}
-        >
-          <HStack
-            _hover={{
-              bgColor: "#3F4971",
-              scale: 1.05,
-            }}
-            style={{
-              transition: "0.8s all",
-            }}
-            justifyContent={"center"}
-            bgColor="#93B2BD"
-            p="2"
-            borderRadius="50px"
-            fontSize="sm"
-          >
-            <FaWhatsapp size="1.2em" color="white" />
-            <Text
-              fontWeight={"bold"}
-              color="white"
-              fontSize="sm"
-            >
-              Consulta
-            </Text>
-          </HStack>
-        </Link>
-      </Float>
-
-      <style>
-        {`
-          @keyframes pulse {
-            0% {
-              transform: scale(1);
-            }
-            50% {
-              transform: scale(1.05);
-            }
-            100% {
-              transform: scale(1);
-            }
-          }
-        `}
-      </style>
     </Box>
   );
 }

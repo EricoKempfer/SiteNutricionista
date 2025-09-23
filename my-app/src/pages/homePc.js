@@ -399,19 +399,19 @@ export default function Home() {
           {[
             {
               name: "Simone Pinheiro Soares",
-              date: "2024-08-05",
+              date: "2025",
               avatar: "https://lh3.googleusercontent.com/a-/ALV-UjX4eB7AuqDIg4KaU4hkSET8RjUO1Y3NXYfw_eJRAGZUVUEzTq0=s64-c-rp-mo-br100",
               text: "Maravilhosa, excelente profissional, acolhedora, ética, com uma bagagem teórica e prática impecável, que faz toda a diferença seus manejos clínicos...",
             },
             {
               name: "Camila de Assis Galan",
-              date: "2024-04-03",
+              date: "2024",
               avatar: "https://lh3.googleusercontent.com/a/ACg8ocLUtE1VNnaRT8oMf_h-yq_-8VvZ4KQoTc6h97SSj5dKKhjqKw=s64-c-rp-mo-br100",
               text: "Nutri excelente! Super indico! 🥰🫶🏼"
             },
             {
               name: "Jucemara Silva",
-              date: "2023-10-09",
+              date: "2023",
               avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWg49X8Ov-6sfjPO2txU-qLQMO3RozQ99P6l9EE4v-BG0EcqzWQ=s64-c-rp-mo-br100&quot",
               text: "Ótima nutri! Super indico",
             }
