@@ -1,91 +1,16 @@
-import { Box, HStack, Text, Separator, Float, Image, Button, VStack, Center } from "@chakra-ui/react";
+import {
+  Box, HStack, Text, Separator, Float, Image, Button, VStack,
+  Avatar, RatingGroup, Stack, AspectRatio, Flex, Link,
+} from "@chakra-ui/react";
 import { FaInstagram, FaWhatsapp, FaFacebook, FaCheckCircle, FaUserMd, FaClipboardList, FaCalendarCheck } from "react-icons/fa";
-import "@fontsource/poppins";
-import { TbTreadmill } from "react-icons/tb";
-import { Avatar, RatingGroup, Stack } from "@chakra-ui/react";
-import { useRouter } from "next/router";
 import { FaHeartPulse } from "react-icons/fa6";
 import { MdOutlineBloodtype } from "react-icons/md";
 import { IoWomanOutline } from "react-icons/io5";
-import { LuSalad } from "react-icons/lu";
 import { GiFruitBowl } from "react-icons/gi";
 import { VscVerifiedFilled } from "react-icons/vsc";
-import { AspectRatio } from "@chakra-ui/react";
-import { Flex, Link } from "@chakra-ui/react";
+import { WHATSAPP_LINK, FAQ_DATA, TESTIMONIALS, BENEFICIOS_DATA } from "@/lib/constants";
 
-const WHATSAPP_LINK =
-  "https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20agendar%20uma%20consulta%20nutricional.";
-
-const FAQ_DATA = [
-  {
-    question: "Quanto custa uma consulta com nutricionista em Chapecó?",
-    answer:
-      "O valor da consulta nutricional varia conforme o tipo de atendimento e o plano de acompanhamento escolhido. Entre em contato pelo WhatsApp para conhecer os valores atualizados e as condições especiais para pacotes de acompanhamento contínuo. Investir em nutrição é investir na sua saúde a longo prazo.",
-  },
-  {
-    question: "Como funciona a primeira consulta com a nutricionista Ludiana Campos?",
-    answer:
-      "Na primeira consulta, realizamos uma avaliação nutricional completa que inclui análise de composição corporal, histórico alimentar, exames laboratoriais e avaliação de hábitos de vida. A partir dessas informações, é elaborado um plano alimentar personalizado, adaptado às suas necessidades, preferências e rotina.",
-  },
-  {
-    question: "Nutricionista pode ajudar no controle do diabetes tipo 2?",
-    answer:
-      "Sim! O acompanhamento nutricional é fundamental no tratamento do diabetes tipo 2. Através de um plano alimentar adequado, é possível controlar os níveis de glicemia, reduzir a hemoglobina glicada e, em muitos casos, diminuir a necessidade de medicamentos. A nutricionista Ludiana Campos é especialista no manejo nutricional do diabetes em Chapecó.",
-  },
-  {
-    question: "Qual a diferença entre nutricionista e nutrólogo em Chapecó?",
-    answer:
-      "O nutricionista é o profissional graduado em Nutrição, habilitado a prescrever planos alimentares, realizar avaliação nutricional e acompanhar o paciente. O nutrólogo é um médico com especialização em nutrologia, podendo prescrever medicamentos. Ambos podem trabalhar de forma complementar para o melhor resultado do paciente.",
-  },
-  {
-    question: "Com que frequência devo consultar uma nutricionista?",
-    answer:
-      "A frequência das consultas depende dos seus objetivos e condição de saúde. Geralmente, o retorno acontece entre 15 e 30 dias no início do tratamento, passando a intervalos maiores conforme a evolução. No acompanhamento para emagrecimento ou diabetes, consultas mensais são recomendadas para ajustes no plano alimentar.",
-  },
-  {
-    question: "Preciso levar exames na consulta com nutricionista?",
-    answer:
-      "Recomendamos levar exames laboratoriais recentes (hemograma, glicemia, colesterol, triglicerídeos, entre outros). Caso não tenha exames atualizados, a nutricionista Ludiana pode solicitar os exames necessários para uma avaliação completa. Exames atualizados ajudam a personalizar melhor o seu plano alimentar.",
-  },
-  {
-    question: "A nutricionista Ludiana Campos atende por convênio em Chapecó?",
-    answer:
-      "Atualmente, os atendimentos são realizados de forma particular, com valores acessíveis e opções de pacotes de acompanhamento. Entre em contato pelo WhatsApp para saber mais sobre formas de pagamento e condições especiais para acompanhamento contínuo.",
-  },
-  {
-    question: "Nutricionista ajuda a emagrecer de forma saudável?",
-    answer:
-      "Com certeza! O emagrecimento saudável é uma das especialidades da nutricionista Ludiana Campos em Chapecó. O acompanhamento profissional garante que a perda de peso ocorra de forma segura, sem dietas restritivas, preservando a massa muscular e promovendo mudanças alimentares sustentáveis a longo prazo.",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    name: "Simone Pinheiro Soares",
-    date: "2025",
-    avatar:
-      "https://lh3.googleusercontent.com/a-/ALV-UjX4eB7AuqDIg4KaU4hkSET8RjUO1Y3NXYfw_eJRAGZUVUEzTq0=s64-c-rp-mo-br100",
-    text: "Maravilhosa, excelente profissional, acolhedora, ética, com uma bagagem teórica e prática impecável, que faz toda a diferença seus manejos clínicos...",
-  },
-  {
-    name: "Camila de Assis Galan",
-    date: "2024",
-    avatar:
-      "https://lh3.googleusercontent.com/a/ACg8ocLUtE1VNnaRT8oMf_h-yq_-8VvZ4KQoTc6h97SSj5dKKhjqKw=s64-c-rp-mo-br100",
-    text: "Nutri excelente! Super indico! 🥰🫶🏼",
-  },
-  {
-    name: "Jucemara Silva",
-    date: "2023",
-    avatar:
-      "https://lh3.googleusercontent.com/a-/ALV-UjWg49X8Ov-6sfjPO2txU-qLQMO3RozQ99P6l9EE4v-BG0EcqzWQ=s64-c-rp-mo-br100",
-    text: "Ótima nutri! Super indico",
-  },
-];
-
-export default function HomePc() {
-  const router = useRouter();
-
+export default function DesktopLayout() {
   const handleScroll = (sectionId) => {
     if (sectionId === "inicio") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -99,6 +24,23 @@ export default function HomePc() {
 
   return (
     <Box as="main" bgColor="#ffffff" w="100%" minH="100vh">
+      {/* Skip to content - Acessibilidade WCAG 2.4.1 */}
+      <Link
+        href="#conteudo-principal"
+        position="absolute"
+        top="-100px"
+        left="0"
+        bg="#93B2BD"
+        color="white"
+        px="4"
+        py="2"
+        zIndex={9999}
+        fontFamily="var(--font-poppins), Poppins, sans-serif"
+        fontWeight="600"
+        _focus={{ top: "0" }}
+      >
+        Pular para o conteúdo principal
+      </Link>
       {/* ===== BOTÃO FLUTUANTE WHATSAPP ===== */}
       <Float
         offsetX="9%"
@@ -125,7 +67,7 @@ export default function HomePc() {
           >
             <FaWhatsapp size="1.5em" color="white" />
             <Text fontWeight={"bold"} color="white">
-              Quero Agendar Minha Consulta
+              Agendar Consulta
             </Text>
           </HStack>
         </Link>
@@ -210,7 +152,7 @@ export default function HomePc() {
       {/* ===== HERO SECTION ===== */}
       <Box
         as="section"
-        id="inicio"
+        id="conteudo-principal"
         w="100%"
         h="500px"
         display="flex"
@@ -652,14 +594,7 @@ export default function HomePc() {
             </Text>
           </VStack>
           <HStack w="80%" justifyContent="center" gap="6" flexWrap="wrap">
-            {[
-              { title: "Emagrecimento sustentável", desc: "Perda de peso real e duradoura, sem efeito sanfona, com planos adaptados ao seu estilo de vida em Chapecó." },
-              { title: "Mais energia e disposição", desc: "Alimentação adequada melhora seu desempenho no trabalho, nos exercícios e nas atividades do dia a dia." },
-              { title: "Controle de doenças crônicas", desc: "Manejo nutricional de diabetes, hipertensão, colesterol alto e outras condições com acompanhamento profissional." },
-              { title: "Melhora da autoestima", desc: "Ao alcançar seus objetivos nutricionais, você ganha mais confiança e satisfação com seu corpo e saúde." },
-              { title: "Prevenção de doenças", desc: "Uma alimentação equilibrada é a melhor ferramenta de prevenção contra diabetes, doenças cardíacas e câncer." },
-              { title: "Educação nutricional", desc: "Aprenda a fazer escolhas alimentares inteligentes que você levará para toda a vida, conquistando autonomia alimentar." },
-            ].map((item, i) => (
+            {BENEFICIOS_DATA.map((item, i) => (
               <HStack
                 key={i}
                 w="380px"
