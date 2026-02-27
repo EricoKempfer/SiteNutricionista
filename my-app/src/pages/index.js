@@ -1,42 +1,35 @@
 import { Box } from "@chakra-ui/react";
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'
-import HomeMobile from "./homeMobile";
-import HomePc from "./homePc";
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import SEO from "../components/SEO";
+import DesktopLayout from "../components/layouts/DesktopLayout";
 
-export default function Demo() {
-  const router = useRouter()
-  const [screenWidth, setScreenWidth] = useState(null)
+// Mobile layout loaded only when needed (code splitting)
+const MobileLayout = dynamic(() => import("../components/layouts/MobileLayout"), {
+  ssr: false,
+  loading: () => null,
+});
+
+export default function Home() {
+  // Default to false (desktop) so SSR always renders full content for Googlebot
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setScreenWidth(window.innerWidth)
-    }
+      setIsMobile(window.innerWidth < 1200);
+    };
 
-    // Set initial width
-    handleResize()
+    // Set initial width on client
+    handleResize();
 
-    // Add event listener
-    window.addEventListener('resize', handleResize)
-
-    // Cleanup
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  // If screen width is not available yet, return null to avoid hydration issues
-  if (screenWidth === null) {
-    return null
-  }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <Box>
       <SEO />
-      {screenWidth < 1200 ? (
-        <HomeMobile/>
-      ) : (
-        <HomePc />
-      )}
+      {isMobile ? <MobileLayout /> : <DesktopLayout />}
     </Box>
   );
-} 
+}
