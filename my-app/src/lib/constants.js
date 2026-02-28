@@ -1,7 +1,7 @@
 // ===== DADOS CENTRALIZADOS DO SITE =====
 // Single source of truth para evitar duplicação entre PC, Mobile e SEO
 
-export const SITE_URL = "https://nutricionista-ludiana-campos.vercel.app";
+export const SITE_URL = "https://nutriludiana.com.br";
 
 export const WHATSAPP_LINK =
   "https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20agendar%20uma%20consulta%20nutricional.";

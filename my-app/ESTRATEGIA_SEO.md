@@ -122,8 +122,8 @@ src/pages/blog/
 ### Imediato (Semana 1):
 - [ ] Verificar se o Google Business Profile está 100% preenchido
 - [ ] Submeter sitemap.xml no Google Search Console
-- [ ] Verificar indexação no Google (`site:nutricionista-ludiana-campos.vercel.app`)
-- [ ] Configurar domínio personalizado (ex: ludianacampos.com.br)
+- [ ] Verificar indexação no Google (`site:nutriludiana.com.br`)
+- [x] Configurar domínio personalizado (`nutriludiana.com.br`)
 - [ ] Criar favicon em formato .ico e .png (144x144, 192x192, 512x512)
 
 ### Curto Prazo (Semana 2-4):
@@ -146,19 +146,14 @@ src/pages/blog/
 
 ---
 
-## 6. Domínio Personalizado (Recomendação)
+## 6. Domínio Personalizado (Status Atual)
 
-O domínio atual (`nutricionista-ludiana-campos.vercel.app`) é um subdomínio da Vercel, o que:
-- Reduz a autoridade de domínio
-- Parece menos profissional
-- Dificulta branding
+Domínio principal configurado: `nutriludiana.com.br` ✅
 
-**Recomendação:** Registrar um domínio como:
-- `ludianacamposnutri.com.br`
-- `nutriludianacampos.com.br`
-- `nutrichaopeco.com.br`
-
-Depois, apontar o domínio na Vercel (configuração gratuita).
+**Próximas ações recomendadas:**
+- Manter redirecionamento 301 do domínio antigo da Vercel para o domínio principal
+- Usar apenas `https://nutriludiana.com.br` em canonical, sitemap e Search Console
+- Acompanhar cobertura e indexação no Search Console nas próximas semanas
 
 ---
 

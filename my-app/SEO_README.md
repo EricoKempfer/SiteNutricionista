@@ -46,7 +46,7 @@
 
 ### Google Search Console
 1. Acesse [Google Search Console](https://search.google.com/search-console)
-2. Adicione sua propriedade: `https://nutricionista-ludiana-campos.vercel.app`
+2. Adicione sua propriedade: `https://nutriludiana.com.br`
 3. Copie o código de verificação
 4. Cole em `/src/components/SEO.js` na linha com `google-site-verification`
 
@@ -57,7 +57,7 @@
 
 ### Submissão de Sitemap
 1. No Google Search Console, vá em "Sitemaps"
-2. Adicione: `https://nutricionista-ludiana-campos.vercel.app/sitemap.xml`
+2. Adicione: `https://nutriludiana.com.br/sitemap.xml`
 
 ---
 

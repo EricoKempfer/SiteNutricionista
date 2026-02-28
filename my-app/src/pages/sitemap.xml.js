@@ -1,4 +1,4 @@
-const SITE_URL = "https://nutricionista-ludiana-campos.vercel.app";
+const SITE_URL = "https://nutriludiana.com.br";
 
 export default function Sitemap() {
   return null;
