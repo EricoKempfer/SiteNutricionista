@@ -8,7 +8,7 @@ Allow: /
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://nutricionista-ludiana-campos.vercel.app/sitemap.xml
+Sitemap: https://nutriludiana.com.br/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
