@@ -1,6 +1,6 @@
 import {
   Box, HStack, Text, Image, Button, VStack,
-  Avatar, RatingGroup, Stack, AspectRatio, Flex, Link,
+  Avatar, RatingGroup, Stack, AspectRatio, Flex, Link, Accordion, Span,
 } from "@chakra-ui/react";
 import { FaInstagram, FaWhatsapp, FaFacebook, FaBars, FaCheckCircle, FaUserMd, FaClipboardList, FaCalendarCheck } from "react-icons/fa";
 import { FaHeartPulse } from "react-icons/fa6";
@@ -210,7 +210,7 @@ export default function MobileLayout() {
             ajudando pacientes em Chapecó e região a alcançarem seus objetivos de saúde.
           </Text>
           <Text fontFamily="Poppins" fontSize="15px" fontWeight="500" color="#5C637C" lineHeight="1.8">
-            Se você busca uma <strong>nutricionista em Chapecó</strong> comprometida com seus resultados, agende sua consulta
+            Se você busca uma nutricionista comprometida com seus resultados, agende sua consulta
             e dê o primeiro passo rumo a uma vida mais saudável.
           </Text>
         </VStack>
@@ -284,7 +284,7 @@ export default function MobileLayout() {
               <FaCalendarCheck color="white" size="1.8em" />
             </Box>
             <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900">
-              3. Acompanhamento Contínuo
+              3. Acompanhamento Contínuo (presencial ou on-line)
             </Text>
             <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
               Consultas de retorno para monitorar sua evolução, ajustar o plano alimentar e garantir que você alcance
@@ -350,7 +350,7 @@ export default function MobileLayout() {
               Controle de Diabetes
             </Text>
             <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-              Tratamento nutricional para diabetes tipo 1 e tipo 2 em Chapecó. Controle glicêmico através de alimentação
+              Tratamento nutricional para diabetes tipo 1 e tipo 2 e diabetes gestacional. Controle glicêmico através de alimentação
               adequada, contagem de carboidratos e educação nutricional.
             </Text>
           </VStack>
@@ -510,12 +510,9 @@ export default function MobileLayout() {
       <VStack as="section" py="8" px="4" gap="6">
         <VStack gap="2">
           <Text as="h2" textAlign="center" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd">
-            Depoimentos de Pacientes
+            Depoimentos
           </Text>
           <Box w="80px" h="3px" bg="#93b2bd" borderRadius="md" />
-          <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" textAlign="center">
-            O que pacientes em Chapecó dizem sobre o acompanhamento nutricional.
-          </Text>
         </VStack>
 
         <Box id="depoimentos" w="100%" display="flex" justifyContent="center" bgColor="white" bgImage="url(/grid2.jpg)">
@@ -572,38 +569,6 @@ export default function MobileLayout() {
             ))}
           </VStack>
         </Box>
-      </VStack>
-
-      {/* ===== FAQ ===== */}
-      <VStack as="section" id="faq" py="8" px="4" gap="6" bgGradient="to-b" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
-        <VStack gap="2">
-          <Text as="h2" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd" textAlign="center">
-            Perguntas Frequentes
-          </Text>
-          <Box w="80px" h="3px" bg="#93b2bd" borderRadius="md" />
-          <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" textAlign="center" px="2">
-            Dúvidas sobre consulta nutricional em Chapecó.
-          </Text>
-        </VStack>
-        <VStack gap="3" w="100%">
-          {FAQ_DATA.map((faq, index) => (
-            <Box
-              key={index}
-              w="100%"
-              p="5"
-              borderRadius="xl"
-              bg="white"
-              boxShadow="0 2px 12px rgba(147, 178, 189, 0.12)"
-            >
-              <Text as="h3" fontFamily="Poppins" fontSize="16px" fontWeight="700" color="cyan.900" mb="2">
-                {faq.question}
-              </Text>
-              <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-                {faq.answer}
-              </Text>
-            </Box>
-          ))}
-        </VStack>
       </VStack>
 
       {/* ===== LOCALIZAÇÃO ===== */}
@@ -668,6 +633,57 @@ export default function MobileLayout() {
             </Flex>
           </Link>
         </VStack>
+      </VStack>
+
+      {/* ===== FAQ ===== */}
+      <VStack as="section" id="faq" py="8" px="4" gap="6" bgGradient="to-b" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
+        <VStack gap="2">
+          <Text as="h2" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd" textAlign="center">
+            Perguntas Frequentes
+          </Text>
+          <Box w="80px" h="3px" bg="#93b2bd" borderRadius="md" />
+          <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" textAlign="center" px="2">
+            Dúvidas sobre consulta nutricional em Chapecó.
+          </Text>
+        </VStack>
+        <Accordion.Root collapsible w="100%" variant="enclosed">
+          {FAQ_DATA.map((faq, index) => (
+            <Accordion.Item key={index} value={String(index)}>
+              <Accordion.ItemTrigger
+                px="5"
+                py="4"
+                bg="white"
+                _hover={{ bg: "gray.50" }}
+                cursor="pointer"
+              >
+                <Span
+                  flex="1"
+                  textAlign="start"
+                  fontFamily="Poppins"
+                  fontSize="15px"
+                  fontWeight="700"
+                  color="cyan.900"
+                >
+                  {faq.question}
+                </Span>
+                <Accordion.ItemIndicator color="#93B2BD" />
+              </Accordion.ItemTrigger>
+              <Accordion.ItemContent>
+                <Accordion.ItemBody
+                  fontFamily="Poppins"
+                  fontSize="14px"
+                  color="#5C637C"
+                  lineHeight="1.7"
+                  px="5"
+                  pb="4"
+                  bg="white"
+                >
+                  {faq.answer}
+                </Accordion.ItemBody>
+              </Accordion.ItemContent>
+            </Accordion.Item>
+          ))}
+        </Accordion.Root>
       </VStack>
 
       {/* ===== FOOTER COM NAP ===== */}
