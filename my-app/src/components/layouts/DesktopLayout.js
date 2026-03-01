@@ -283,7 +283,7 @@ export default function DesktopLayout() {
               Minha abordagem é centrada no paciente: escuto suas necessidades, respeito suas preferências alimentares e considero
               sua rotina para criar planos nutricionais que realmente funcionem no dia a dia. Atuo especialmente nas áreas de{" "}
               <strong>emagrecimento saudável</strong>, <strong>controle de diabetes</strong> e <strong>saúde feminina</strong>,
-              ajudando pacientes em Chapecó e região a alcançarem seus objetivos de saúde de forma sustentável.
+              ajudando pacientes a alcançarem seus objetivos de saúde de forma sustentável.
             </Text>
             <Text fontFamily="Poppins" fontSize="17px" fontWeight="500" color="#5C637C" lineHeight="1.8">
               Acredito que a nutrição é a base para uma vida mais saudável e que cada pessoa merece um acompanhamento profissional
@@ -303,7 +303,7 @@ export default function DesktopLayout() {
             </Text>
             <Box w="200px" h="3px" bg="#93b2bd" borderRadius="md" />
             <Text fontFamily="Poppins" fontSize="18px" color="#5C637C" textAlign="center" maxW="700px" mt="2">
-              Conheça o passo a passo do atendimento nutricional com a nutricionista Ludiana Campos em Chapecó – SC.
+              Conheça o passo a passo do atendimento nutricional com a nutricionista Ludiana Campos.
               Um processo simples, acolhedor e focado nos seus resultados.
             </Text>
           </VStack>
@@ -394,7 +394,7 @@ export default function DesktopLayout() {
                 <FaCalendarCheck color="white" size="2em" />
               </Box>
               <Text as="h3" fontFamily="Poppins" fontSize="20px" fontWeight="700" color="cyan.900">
-                3. Acompanhamento Contínuo (presencial ou on-line)
+                3. Acompanhamento Contínuo <br></br>(presencial ou on-line)
               </Text>
               <Text fontFamily="Poppins" fontSize="15px" color="#5C637C" lineHeight="1.7">
                 Realizo consultas de retorno para monitorar sua evolução, ajustar o plano alimentar conforme necessário e
@@ -432,7 +432,7 @@ export default function DesktopLayout() {
             </Text>
             <Box w="200px" h="3px" bg="#93b2bd" borderRadius="md" />
             <Text fontFamily="Poppins" fontSize="18px" color="#5C637C" textAlign="center" maxW="700px" mt="2">
-              Atendimento especializado em Chapecó – SC para transformar sua saúde através da alimentação adequada.
+              Atendimento especializado para transformar sua saúde através da alimentação adequada.
             </Text>
           </VStack>
 
@@ -503,7 +503,7 @@ export default function DesktopLayout() {
                 Emagrecimento Saudável
               </Text>
               <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-                Programa de emagrecimento em Chapecó sem dietas restritivas. Planos alimentares equilibrados que promovem
+                Programa de emagrecimento sem dietas restritivas. Planos alimentares equilibrados que promovem
                 perda de peso sustentável, preservando massa muscular e promovendo bem-estar duradouro.
               </Text>
             </VStack>
@@ -538,7 +538,7 @@ export default function DesktopLayout() {
                 Saúde Feminina
               </Text>
               <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-                Nutrição especializada para mulheres em Chapecó: SOP, endometriose, TPM, menopausa e gestação. Alimentação
+                Nutrição especializada para mulheres: SOP, endometriose, TPM, menopausa e gestação. Alimentação
                 estratégica para equilíbrio hormonal, fertilidade e bem-estar em todas as fases da vida.
               </Text>
             </VStack>
@@ -574,7 +574,7 @@ export default function DesktopLayout() {
               </Text>
               <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
                 Tratamento nutricional para distúrbios gastrointestinais: gastrite, refluxo, síndrome do intestino irritável
-                e intolerâncias alimentares. Melhore sua digestão e qualidade de vida em Chapecó.
+                e intolerâncias alimentares. Melhore sua digestão e qualidade de vida.
               </Text>
             </VStack>
           </HStack>

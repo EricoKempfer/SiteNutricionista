@@ -207,7 +207,7 @@ export default function MobileLayout() {
             Minha abordagem é centrada no paciente: escuto suas necessidades, respeito suas preferências alimentares e considero
             sua rotina para criar planos nutricionais que realmente funcionem. Atuo especialmente nas áreas de{" "}
             <strong>emagrecimento saudável</strong>, <strong>controle de diabetes</strong> e <strong>saúde feminina</strong>,
-            ajudando pacientes em Chapecó e região a alcançarem seus objetivos de saúde.
+            ajudando pacientes a alcançarem seus objetivos de saúde.
           </Text>
           <Text fontFamily="Poppins" fontSize="15px" fontWeight="500" color="#5C637C" lineHeight="1.8">
             Se você busca uma nutricionista comprometida com seus resultados, agende sua consulta
@@ -224,7 +224,7 @@ export default function MobileLayout() {
           </Text>
           <Box w="80px" h="3px" bg="#93b2bd" borderRadius="md" />
           <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" textAlign="center" px="2" mt="2">
-            Passo a passo do atendimento nutricional em Chapecó – SC.
+            Passo a passo do atendimento nutricional.
           </Text>
         </VStack>
         <VStack gap="4" w="100%">
@@ -284,8 +284,9 @@ export default function MobileLayout() {
               <FaCalendarCheck color="white" size="1.8em" />
             </Box>
             <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900">
-              3. Acompanhamento Contínuo (presencial ou on-line)
+              3. Acompanhamento Contínuo <br></br>(presencial ou on-line)
             </Text>
+            
             <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
               Consultas de retorno para monitorar sua evolução, ajustar o plano alimentar e garantir que você alcance
               seus objetivos com segurança.
@@ -317,7 +318,7 @@ export default function MobileLayout() {
           </Text>
           <Box w="80px" h="3px" bg="#93b2bd" borderRadius="md" />
           <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" textAlign="center" px="2" mt="2">
-            Atendimento especializado em Chapecó – SC
+            Atendimento especializado em nutrição clínica
           </Text>
         </VStack>
 
@@ -383,7 +384,7 @@ export default function MobileLayout() {
               Emagrecimento Saudável
             </Text>
             <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-              Programa de emagrecimento em Chapecó sem dietas restritivas. Planos alimentares equilibrados para perda de
+              Programa de emagrecimento sem dietas restritivas. Planos alimentares equilibrados para perda de
               peso sustentável, preservando massa muscular.
             </Text>
           </VStack>
@@ -416,7 +417,7 @@ export default function MobileLayout() {
               Saúde Feminina
             </Text>
             <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-              Nutrição especializada para mulheres em Chapecó: SOP, endometriose, TPM, menopausa e gestação. Alimentação
+              Nutrição especializada para mulheres: SOP, endometriose, TPM, menopausa e gestação. Alimentação
               estratégica para equilíbrio hormonal e bem-estar.
             </Text>
           </VStack>
@@ -450,7 +451,7 @@ export default function MobileLayout() {
             </Text>
             <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
               Tratamento nutricional para distúrbios gastrointestinais: gastrite, refluxo, síndrome do intestino irritável
-              e intolerâncias alimentares em Chapecó.
+              e intolerâncias alimentares.
             </Text>
           </VStack>
         </VStack>
