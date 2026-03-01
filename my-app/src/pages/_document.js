@@ -1,10 +1,30 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 import { SITE_URL } from "@/lib/constants";
+import { GA_TRACKING_ID } from "@/lib/analytics";
 
 export default function Document() {
   return (
     <Html lang="pt-BR" dir="ltr">
       <Head>
+        {/* Google Analytics */}
+        <Script 
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} 
+          strategy="afterInteractive" 
+        />
+        <Script 
+          id="google-analytics" 
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}');
+            `
+          }}
+        />
+
         {/* Charset */}
         <meta charSet="utf-8" />
 
