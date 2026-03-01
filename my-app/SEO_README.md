@@ -52,7 +52,7 @@
 
 ### Google Analytics
 1. Crie uma conta no [Google Analytics 4](https://analytics.google.com)
-2. Copie o ID de medição (G-XXXXXXXXXX)
+2. Copie o ID de medição (G-XXXXXXXXXX) 
 3. Cole em `/src/lib/analytics.js` na variável `GA_TRACKING_ID`
 
 ### Submissão de Sitemap

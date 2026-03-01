@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 // Google Analytics ID
-export const GA_TRACKING_ID = 'G-92GX47LHHY'; // Substitua pelo seu ID
+export const GA_TRACKING_ID = 'G-470DQ4T338'; // Substitua pelo seu ID
 
 // Google Search Console
-export const GOOGLE_SITE_VERIFICATION = 'vO3xBDukAEKKJtesPCusU52j2v1Mfcwbz_B3m4gFSZ8'; // Substitua pela sua verificação
+export const GOOGLE_SITE_VERIFICATION = 'WEExwPqYESmdI5QnVSMwV_8nGXiw-HWLIVa-p55-xbc'; // Substitua pela sua verificação
 
 // Função para rastrear page views
 export const pageview = (url) => {
