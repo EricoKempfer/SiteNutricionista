@@ -28,6 +28,9 @@ export default function Document() {
         {/* Charset */}
         <meta charSet="utf-8" />
 
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="WEExwPqYESmdI5QnVSMwV_8nGXiw-HWLIVa-p55-xbc" />
+
         {/* Robots */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
