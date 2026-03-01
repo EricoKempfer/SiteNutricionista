@@ -16,7 +16,7 @@ export const SOCIAL_LINKS = {
 
 export const FAQ_DATA = [
   {
-    question: "Quanto custa uma consulta com nutricionista em Chapecó?",
+    question: "Quanto custa uma consulta com a nutricionista?",
     answer:
       "O valor da consulta nutricional varia conforme o tipo de atendimento e o plano de acompanhamento escolhido. Entre em contato pelo WhatsApp para conhecer os valores atualizados e as condições especiais para pacotes de acompanhamento contínuo. Investir em nutrição é investir na sua saúde a longo prazo.",
   },
