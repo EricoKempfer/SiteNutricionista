@@ -31,9 +31,9 @@ export const FAQ_DATA = [
       "Sim! O acompanhamento nutricional é fundamental no tratamento do diabetes tipo 2. Através de um plano alimentar adequado, é possível controlar os níveis de glicemia, reduzir a hemoglobina glicada e, em muitos casos, diminuir a necessidade de medicamentos. A nutricionista Ludiana Campos é especialista no manejo nutricional do diabetes em Chapecó.",
   },
   {
-    question: "Qual a diferença entre nutricionista e nutrólogo em Chapecó?",
+    question: "A nutricionista Ludiana Campos atende on-line?",
     answer:
-      "O nutricionista é o profissional graduado em Nutrição, habilitado a prescrever planos alimentares, realizar avaliação nutricional e acompanhar o paciente. O nutrólogo é um médico com especialização em nutrologia, podendo prescrever medicamentos. Ambos podem trabalhar de forma complementar para o melhor resultado do paciente.",
+      "Sim! Além dos atendimentos presenciais em Chapecó, a nutricionista Ludiana Campos também realiza consultas on-line para pacientes que preferem o acompanhamento à distância ou que residem em outras cidades. O atendimento on-line mantém a mesma qualidade e efetividade do presencial, com avaliação completa e plano alimentar personalizado.",
   },
   {
     question: "Com que frequência devo consultar uma nutricionista?",

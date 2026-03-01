@@ -1,6 +1,6 @@
 import {
   Box, HStack, Text, Separator, Float, Image, Button, VStack,
-  Avatar, RatingGroup, Stack, AspectRatio, Flex, Link,
+  Avatar, RatingGroup, Stack, AspectRatio, Flex, Link, Accordion, Span,
 } from "@chakra-ui/react";
 import { FaInstagram, FaWhatsapp, FaFacebook, FaCheckCircle, FaUserMd, FaClipboardList, FaCalendarCheck } from "react-icons/fa";
 import { FaHeartPulse } from "react-icons/fa6";
@@ -287,7 +287,7 @@ export default function DesktopLayout() {
             </Text>
             <Text fontFamily="Poppins" fontSize="17px" fontWeight="500" color="#5C637C" lineHeight="1.8">
               Acredito que a nutrição é a base para uma vida mais saudável e que cada pessoa merece um acompanhamento profissional
-              que respeite sua individualidade. Se você busca uma <strong>nutricionista em Chapecó</strong> comprometida com seus
+              que respeite sua individualidade. Se você busca uma nutricionista comprometida com seus
               resultados, agende sua consulta e dê o primeiro passo rumo a uma vida mais saudável.
             </Text>
           </Box>
@@ -394,7 +394,7 @@ export default function DesktopLayout() {
                 <FaCalendarCheck color="white" size="2em" />
               </Box>
               <Text as="h3" fontFamily="Poppins" fontSize="20px" fontWeight="700" color="cyan.900">
-                3. Acompanhamento Contínuo
+                3. Acompanhamento Contínuo (presencial ou on-line)
               </Text>
               <Text fontFamily="Poppins" fontSize="15px" color="#5C637C" lineHeight="1.7">
                 Realizo consultas de retorno para monitorar sua evolução, ajustar o plano alimentar conforme necessário e
@@ -468,7 +468,7 @@ export default function DesktopLayout() {
                 Controle de Diabetes
               </Text>
               <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-                Tratamento nutricional para diabetes tipo 1 e tipo 2 em Chapecó. Controle glicêmico através de alimentação
+                Tratamento nutricional para diabetes tipo 1 e tipo 2 e diabetes gestacional. Controle glicêmico através de alimentação
                 adequada, contagem de carboidratos e educação nutricional, reduzindo complicações a longo prazo.
               </Text>
             </VStack>
@@ -645,12 +645,10 @@ export default function DesktopLayout() {
       <Box as="section" py="5%" w="100%">
         <VStack gap="6">
           <Text as="h2" textAlign="center" fontFamily="Poppins" fontSize="42px" fontWeight="700" textShadow="2px 2px 4px rgba(0,0,0,0.1)" color="#93b2bd">
-            Depoimentos de Pacientes
+            Depoimentos
           </Text>
           <Box w="200px" h="3px" bg="#93b2bd" borderRadius="md" />
-          <Text fontFamily="Poppins" fontSize="18px" color="#5C637C" textAlign="center" maxW="600px">
-            Veja o que pacientes em Chapecó e região dizem sobre o acompanhamento nutricional com a nutricionista Ludiana Campos.
-          </Text>
+          
         </VStack>
 
         <Box
@@ -740,42 +738,6 @@ export default function DesktopLayout() {
             ))}
           </HStack>
         </Box>
-      </Box>
-
-      {/* ===== FAQ ===== */}
-      <Box as="section" id="faq" py="5%" w="100%" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
-        <VStack w="100%" gap="8">
-          <VStack gap="2">
-            <Text as="h2" fontFamily="Poppins" fontSize="42px" fontWeight="700" color="#93b2bd" textAlign="center">
-              Perguntas Frequentes
-            </Text>
-            <Box w="200px" h="3px" bg="#93b2bd" borderRadius="md" />
-            <Text fontFamily="Poppins" fontSize="18px" color="#5C637C" textAlign="center" maxW="700px" mt="2">
-              Tire suas dúvidas sobre consulta nutricional em Chapecó com a nutricionista Ludiana Campos.
-            </Text>
-          </VStack>
-          <VStack w="70%" gap="4">
-            {FAQ_DATA.map((faq, index) => (
-              <Box
-                key={index}
-                w="100%"
-                p="6"
-                borderRadius="xl"
-                bg="white"
-                boxShadow="0 2px 12px rgba(147, 178, 189, 0.12)"
-                transition="all 0.3s"
-                _hover={{ boxShadow: "0 4px 20px rgba(147, 178, 189, 0.25)" }}
-              >
-                <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900" mb="2">
-                  {faq.question}
-                </Text>
-                <Text fontFamily="Poppins" fontSize="15px" color="#5C637C" lineHeight="1.7">
-                  {faq.answer}
-                </Text>
-              </Box>
-            ))}
-          </VStack>
-        </VStack>
       </Box>
 
       {/* ===== LOCALIZAÇÃO ===== */}
@@ -887,6 +849,59 @@ export default function DesktopLayout() {
             </Flex>
           </Link>
         </Flex>
+      </Box>
+
+      {/* ===== FAQ ===== */}
+      <Box as="section" id="faq" py="5%" w="100%" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
+        <VStack w="100%" gap="8">
+          <VStack gap="2">
+            <Text as="h2" fontFamily="Poppins" fontSize="42px" fontWeight="700" color="#93b2bd" textAlign="center">
+              Perguntas Frequentes
+            </Text>
+            <Box w="200px" h="3px" bg="#93b2bd" borderRadius="md" />
+            <Text fontFamily="Poppins" fontSize="18px" color="#5C637C" textAlign="center" maxW="700px" mt="2">
+              Tire suas dúvidas sobre consulta nutricional em Chapecó com a nutricionista Ludiana Campos.
+            </Text>
+          </VStack>
+          <Accordion.Root collapsible w="70%" variant="enclosed">
+            {FAQ_DATA.map((faq, index) => (
+              <Accordion.Item key={index} value={String(index)}>
+                <Accordion.ItemTrigger
+                  px="6"
+                  py="5"
+                  bg="white"
+                  _hover={{ bg: "gray.50" }}
+                  cursor="pointer"
+                >
+                  <Span
+                    flex="1"
+                    textAlign="start"
+                    fontFamily="Poppins"
+                    fontSize="17px"
+                    fontWeight="700"
+                    color="cyan.900"
+                  >
+                    {faq.question}
+                  </Span>
+                  <Accordion.ItemIndicator color="#93B2BD" />
+                </Accordion.ItemTrigger>
+                <Accordion.ItemContent>
+                  <Accordion.ItemBody
+                    fontFamily="Poppins"
+                    fontSize="15px"
+                    color="#5C637C"
+                    lineHeight="1.7"
+                    px="6"
+                    pb="5"
+                    bg="white"
+                  >
+                    {faq.answer}
+                  </Accordion.ItemBody>
+                </Accordion.ItemContent>
+              </Accordion.Item>
+            ))}
+          </Accordion.Root>
+        </VStack>
       </Box>
 
       {/* ===== FOOTER COM NAP (Name, Address, Phone) ===== */}
