@@ -10,6 +10,7 @@ import { GiFruitBowl } from "react-icons/gi";
 import { VscVerifiedFilled } from "react-icons/vsc";
 import { useState } from "react";
 import { WHATSAPP_LINK, FAQ_DATA, TESTIMONIALS, BENEFICIOS_DATA_MOBILE } from "@/lib/constants";
+import { trackEbookDownload } from "@/lib/analytics";
 
 export default function MobileLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -685,6 +686,94 @@ export default function MobileLayout() {
             </Accordion.Item>
           ))}
         </Accordion.Root>
+      </VStack>
+
+      {/* ===== EBOOK ===== */}
+      <VStack as="section" py="8" px="4" gap="6" bg="white">
+        <VStack gap="2">
+          <Text as="h2" fontFamily="Poppins" fontSize="24px" fontWeight="700" color="#93b2bd" textAlign="center">
+            Presente para Você! 🎉
+          </Text>
+          <Box w="80px" h="3px" bg="#93b2bd" borderRadius="md" />
+          <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" textAlign="center">
+            Baixe gratuitamente o e-book com receitas saudáveis!
+          </Text>
+        </VStack>
+        <VStack
+          gap="5"
+          p="6"
+          borderRadius="2xl"
+          bg="linear-gradient(135deg, #E9EEF2 0%, #F8F9FB 100%)"
+          boxShadow="0 8px 32px rgba(147, 178, 189, 0.25)"
+          w="100%"
+          alignItems="center"
+        >
+          <Box
+            h="180px"
+            w="130px"
+            borderRadius="xl"
+            bgGradient="to-b"
+            gradientFrom="#93B2BD"
+            gradientTo="#3F4971"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+            gap="3"
+            boxShadow="0 8px 24px rgba(63,73,113,0.3)"
+            p="4"
+          >
+            <Text fontSize="38px">🥗</Text>
+            <Box w="30px" h="1.5px" bg="whiteAlpha.600" borderRadius="full" />
+            <Text fontFamily="Poppins" fontWeight="800" color="white" textAlign="center" fontSize="11px" lineHeight="1.4">
+              Receitas para Aproveitar o Momento!
+            </Text>
+            <Box
+              px="3"
+              py="0.5"
+              borderRadius="full"
+              bg="whiteAlpha.300"
+              border="1px solid"
+              borderColor="whiteAlpha.500"
+            >
+              <Text fontFamily="Poppins" color="white" fontSize="9px" fontWeight="600">
+                E-BOOK GRATUITO
+              </Text>
+            </Box>
+          </Box>
+          <VStack align="start" gap="3" w="100%">
+            <Text fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900" textAlign="center" w="100%">
+              Receitas para Aproveitar o Momento!
+            </Text>
+            <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7" textAlign="center">
+              Receitas saudáveis, saborosas e fáceis de preparar pela nutricionista Ludiana Campos.
+            </Text>
+            <VStack align="start" gap="2" w="100%">
+              <HStack><FaCheckCircle color="#93B2BD" /><Text fontFamily="Poppins" fontSize="14px" color="#5C637C">Receitas práticas e saborosas</Text></HStack>
+              <HStack><FaCheckCircle color="#93B2BD" /><Text fontFamily="Poppins" fontSize="14px" color="#5C637C">100% gratuito</Text></HStack>
+            </VStack>
+            <Link
+              href="/Receitas%20aproveitar%20o%20momento!%20Nutri%20Ludiana.pdf"
+              download
+              _hover={{ textDecoration: "none" }}
+              onClick={trackEbookDownload}
+              w="100%"
+            >
+              <Button
+                w="100%"
+                size="md"
+                bgColor="#93B2BD"
+                color="white"
+                borderRadius="50px"
+                fontWeight="bold"
+                _hover={{ bgColor: "#3F4971" }}
+                transition="all 0.3s"
+              >
+                📥&nbsp; Baixar E-book Gratuito
+              </Button>
+            </Link>
+          </VStack>
+        </VStack>
       </VStack>
 
       {/* ===== FOOTER COM NAP ===== */}

@@ -68,3 +68,11 @@ export const trackSectionView = (section) => {
     label: section,
   });
 };
+
+export const trackEbookDownload = () => {
+  event({
+    action: 'download',
+    category: 'Ebook',
+    label: 'Receitas aproveitar o momento - Nutri Ludiana',
+  });
+};

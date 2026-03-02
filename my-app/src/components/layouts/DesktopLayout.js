@@ -9,6 +9,7 @@ import { IoWomanOutline } from "react-icons/io5";
 import { GiFruitBowl } from "react-icons/gi";
 import { VscVerifiedFilled } from "react-icons/vsc";
 import { WHATSAPP_LINK, FAQ_DATA, TESTIMONIALS, BENEFICIOS_DATA } from "@/lib/constants";
+import { trackEbookDownload } from "@/lib/analytics";
 
 export default function DesktopLayout() {
   const handleScroll = (sectionId) => {
@@ -901,6 +902,105 @@ export default function DesktopLayout() {
               </Accordion.Item>
             ))}
           </Accordion.Root>
+        </VStack>
+      </Box>
+
+      {/* ===== EBOOK ===== */}
+      <Box as="section" py="5%" w="100%" bg="white">
+        <VStack w="100%" gap="8" alignItems="center">
+          <VStack gap="2">
+            <Text as="h2" fontFamily="Poppins" fontSize="42px" fontWeight="700" color="#93b2bd" textAlign="center">
+              Presente para Você! 🎉
+            </Text>
+            <Box w="200px" h="3px" bg="#93b2bd" borderRadius="md" />
+            <Text fontFamily="Poppins" fontSize="18px" color="#5C637C" textAlign="center" maxW="600px" mt="2">
+              Baixe gratuitamente o e-book com receitas saudáveis para aproveitar o momento!
+            </Text>
+          </VStack>
+          <Box
+            display="flex"
+            flexDirection="row"
+            alignItems="center"
+            gap="12"
+            p="10"
+            borderRadius="2xl"
+            bg="linear-gradient(135deg, #E9EEF2 0%, #F8F9FB 100%)"
+            boxShadow="0 8px 32px rgba(147, 178, 189, 0.25)"
+            w="70%"
+          >
+            <Box
+              h="280px"
+              w="200px"
+              borderRadius="xl"
+              bgGradient="to-b"
+              gradientFrom="#93B2BD"
+              gradientTo="#3F4971"
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="center"
+              gap="4"
+              boxShadow="0 8px 24px rgba(63,73,113,0.3)"
+              p="6"
+            >
+              <Text fontSize="52px">🥗</Text>
+              <Box w="40px" h="2px" bg="whiteAlpha.600" borderRadius="full" />
+              <Text fontFamily="Poppins" fontWeight="800" color="white" textAlign="center" fontSize="15px" lineHeight="1.4">
+                Receitas para Aproveitar o Momento!
+              </Text>
+              <Text fontFamily="Poppins" color="whiteAlpha.800" textAlign="center" fontSize="11px">
+                Nutri Ludiana
+              </Text>
+              <Box
+                mt="2"
+                px="4"
+                py="1"
+                borderRadius="full"
+                bg="whiteAlpha.300"
+                border="1px solid"
+                borderColor="whiteAlpha.500"
+              >
+                <Text fontFamily="Poppins" color="white" fontSize="11px" fontWeight="600">
+                  E-BOOK GRATUITO
+                </Text>
+              </Box>
+            </Box>
+            <VStack align="start" gap="5" flex="1">
+              <Text fontFamily="Poppins" fontSize="28px" fontWeight="700" color="cyan.900" lineHeight="1.3">
+                Receitas para Aproveitar o Momento!
+              </Text>
+              <Text fontFamily="Poppins" fontSize="16px" color="#5C637C" lineHeight="1.8">
+                Um e-book especial da nutricionista Ludiana Campos com receitas saudáveis, saborosas e fáceis de preparar.
+                Cuide da sua alimentação sem abrir mão do prazer de comer bem!
+              </Text>
+              <VStack align="start" gap="2">
+                <HStack><FaCheckCircle color="#93B2BD" /><Text fontFamily="Poppins" fontSize="15px" color="#5C637C">Receitas práticas e saborosas</Text></HStack>
+                <HStack><FaCheckCircle color="#93B2BD" /><Text fontFamily="Poppins" fontSize="15px" color="#5C637C">100% gratuito</Text></HStack>
+              </VStack>
+              <Link
+                href="/Receitas%20aproveitar%20o%20momento!%20Nutri%20Ludiana.pdf"
+                download
+                _hover={{ textDecoration: "none" }}
+                onClick={trackEbookDownload}
+              >
+                <Button
+                  size="lg"
+                  bgColor="#93B2BD"
+                  color="white"
+                  borderRadius="50px"
+                  px="10"
+                  py="6"
+                  fontSize="lg"
+                  fontWeight="bold"
+                  _hover={{ bgColor: "#3F4971", transform: "scale(1.05)" }}
+                  transition="all 0.3s"
+                  boxShadow="0 4px 15px rgba(147, 178, 189, 0.4)"
+                >
+                  📥&nbsp; Baixar E-book Gratuito
+                </Button>
+              </Link>
+            </VStack>
+          </Box>
         </VStack>
       </Box>
 
