@@ -45,9 +45,9 @@ export default function Document() {
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
         {/* Favicon / Ícone no Google */}
-        <link rel="icon" href="/googleIcon.png" type="image/png" />
-        <link rel="shortcut icon" href="/googleIcon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/googleIcon.png" />
+        <link rel="icon" href="/icone-fruta.jpg" type="image/jpeg" />
+        <link rel="shortcut icon" href="/icone-fruta.jpg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/icone-fruta.jpg" />
 
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
