@@ -9,7 +9,7 @@ import { IoWomanOutline } from "react-icons/io5";
 import { GiFruitBowl } from "react-icons/gi";
 import { VscVerifiedFilled } from "react-icons/vsc";
 import { WHATSAPP_LINK, FAQ_DATA, TESTIMONIALS, BENEFICIOS_DATA } from "@/lib/constants";
-import { trackEbookDownload } from "@/lib/analytics";
+import { trackEbookDownload, trackWhatsAppClick } from "@/lib/analytics";
 
 export default function DesktopLayout() {
   const handleScroll = (sectionId) => {
@@ -57,6 +57,7 @@ export default function DesktopLayout() {
           rel="noopener noreferrer"
           _hover={{ textDecoration: "none" }}
           aria-label="Agende sua consulta pelo WhatsApp"
+          onClick={trackWhatsAppClick}
         >
           <HStack
             _hover={{ bgColor: "#3F4971", scale: 1.1 }}
@@ -134,7 +135,7 @@ export default function DesktopLayout() {
             </Text>
           </HStack>
           <HStack>
-            <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }}>
+            <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick}>
               <Button
                 variant={"subtle"}
                 color={"#93B2BD"}
@@ -218,7 +219,7 @@ export default function DesktopLayout() {
             <strong>Saúde Feminina</strong>. Transforme sua relação com a alimentação e conquiste mais qualidade de vida.
           </Text>
           <HStack mt="5%" gap="4">
-            <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }}>
+            <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick}>
               <Button
                 size="lg"
                 bgColor="#93B2BD"
@@ -403,7 +404,7 @@ export default function DesktopLayout() {
               </Text>
             </VStack>
           </HStack>
-          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }}>
+          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick}>
             <Button
               mt="4"
               size="lg"
@@ -621,7 +622,7 @@ export default function DesktopLayout() {
               </HStack>
             ))}
           </HStack>
-          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }}>
+          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick}>
             <Button
               mt="4"
               size="lg"
@@ -801,7 +802,7 @@ export default function DesktopLayout() {
               </Text>
             </Flex>
           </Link>
-          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} aria-label="WhatsApp da Nutricionista Ludiana Campos">
+          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} aria-label="WhatsApp da Nutricionista Ludiana Campos" onClick={trackWhatsAppClick}>
             <Flex
               direction="column"
               alignItems="center"
@@ -928,43 +929,14 @@ export default function DesktopLayout() {
             boxShadow="0 8px 32px rgba(147, 178, 189, 0.25)"
             w="70%"
           >
-            <Box
+            <Image
+              src="/capaEbook.jpeg"
+              alt="E-book Receitas para Aproveitar o Momento - Nutri Ludiana"
               h="280px"
-              w="200px"
               borderRadius="xl"
-              bgGradient="to-b"
-              gradientFrom="#93B2BD"
-              gradientTo="#3F4971"
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              justifyContent="center"
-              gap="4"
               boxShadow="0 8px 24px rgba(63,73,113,0.3)"
-              p="6"
-            >
-              <Text fontSize="52px">🥗</Text>
-              <Box w="40px" h="2px" bg="whiteAlpha.600" borderRadius="full" />
-              <Text fontFamily="Poppins" fontWeight="800" color="white" textAlign="center" fontSize="15px" lineHeight="1.4">
-                Receitas para Aproveitar o Momento!
-              </Text>
-              <Text fontFamily="Poppins" color="whiteAlpha.800" textAlign="center" fontSize="11px">
-                Nutri Ludiana
-              </Text>
-              <Box
-                mt="2"
-                px="4"
-                py="1"
-                borderRadius="full"
-                bg="whiteAlpha.300"
-                border="1px solid"
-                borderColor="whiteAlpha.500"
-              >
-                <Text fontFamily="Poppins" color="white" fontSize="11px" fontWeight="600">
-                  E-BOOK GRATUITO
-                </Text>
-              </Box>
-            </Box>
+              objectFit="cover"
+            />
             <VStack align="start" gap="5" flex="1">
               <Text fontFamily="Poppins" fontSize="28px" fontWeight="700" color="cyan.900" lineHeight="1.3">
                 Receitas para Aproveitar o Momento!
@@ -1035,7 +1007,7 @@ export default function DesktopLayout() {
               <Link href="https://www.instagram.com/nutriludiana" target="_blank" aria-label="Instagram">
                 <FaInstagram color="white" size="1.5em" />
               </Link>
-              <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" onClick={trackWhatsAppClick}>
                 <FaWhatsapp color="white" size="1.5em" />
               </Link>
               <Link href="https://www.facebook.com/share/1GRdgdEPzt/" target="_blank" aria-label="Facebook">

@@ -10,7 +10,7 @@ import { GiFruitBowl } from "react-icons/gi";
 import { VscVerifiedFilled } from "react-icons/vsc";
 import { useState } from "react";
 import { WHATSAPP_LINK, FAQ_DATA, TESTIMONIALS, BENEFICIOS_DATA_MOBILE } from "@/lib/constants";
-import { trackEbookDownload } from "@/lib/analytics";
+import { trackEbookDownload, trackWhatsAppClick } from "@/lib/analytics";
 
 export default function MobileLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,7 +54,7 @@ export default function MobileLayout() {
             <FaBars color="#93B2BD" />
           </Button>
           <Image h="35px" src="/logonutr.jpg" alt="Logo Nutricionista Ludiana Campos - Chapecó SC" loading="eager" />
-          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }}>
+          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick}>
             <Button
               variant="outline"
               color="#93B2BD"
@@ -88,7 +88,7 @@ export default function MobileLayout() {
             <Text cursor="pointer" onClick={() => handleScroll("depoimentos")} textAlign="center" role="menuitem">Depoimentos</Text>
             <Text cursor="pointer" onClick={() => handleScroll("faq")} textAlign="center" role="menuitem">FAQ</Text>
             <Text cursor="pointer" onClick={() => handleScroll("local")} textAlign="center" role="menuitem">Local</Text>
-            <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} w="100%">
+            <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick} w="100%">
               <Button variant="outline" color="#93B2BD" borderColor="#93B2BD" size="sm" w="100%" _hover={{ bgColor: "#93B2BD", color: "white" }}>
                 Agende sua Consulta
               </Button>
@@ -151,7 +151,7 @@ export default function MobileLayout() {
             Especialista em <strong>Emagrecimento Saudável</strong>, <strong>Controle de Diabetes</strong> e{" "}
             <strong>Saúde Feminina</strong>. Transforme sua saúde através da alimentação.
           </Text>
-          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} mt="4">
+          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick} mt="4">
             <Button
               size="md"
               bgColor="#93B2BD"
@@ -294,7 +294,7 @@ export default function MobileLayout() {
             </Text>
           </VStack>
         </VStack>
-        <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }}>
+        <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick}>
           <Button
             size="md"
             bgColor="#93B2BD"
@@ -491,7 +491,7 @@ export default function MobileLayout() {
             </HStack>
           ))}
         </VStack>
-        <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }}>
+        <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick}>
           <Button
             size="md"
             bgColor="#93B2BD"
@@ -616,7 +616,7 @@ export default function MobileLayout() {
               </VStack>
             </Flex>
           </Link>
-          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} aria-label="WhatsApp" w="100%">
+          <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick} aria-label="WhatsApp" w="100%">
             <Flex direction="row" alignItems="center" p="5" borderRadius="lg" boxShadow="lg" bg="white" w="100%" gap="4">
               <FaWhatsapp color="#93B2BD" size="2em" />
               <VStack align="start" gap="1">
@@ -708,39 +708,14 @@ export default function MobileLayout() {
           w="100%"
           alignItems="center"
         >
-          <Box
+          <Image
+            src="/capaEbook.jpeg"
+            alt="E-book Receitas para Aproveitar o Momento - Nutri Ludiana"
             h="180px"
-            w="130px"
             borderRadius="xl"
-            bgGradient="to-b"
-            gradientFrom="#93B2BD"
-            gradientTo="#3F4971"
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            gap="3"
             boxShadow="0 8px 24px rgba(63,73,113,0.3)"
-            p="4"
-          >
-            <Text fontSize="38px">🥗</Text>
-            <Box w="30px" h="1.5px" bg="whiteAlpha.600" borderRadius="full" />
-            <Text fontFamily="Poppins" fontWeight="800" color="white" textAlign="center" fontSize="11px" lineHeight="1.4">
-              Receitas para Aproveitar o Momento!
-            </Text>
-            <Box
-              px="3"
-              py="0.5"
-              borderRadius="full"
-              bg="whiteAlpha.300"
-              border="1px solid"
-              borderColor="whiteAlpha.500"
-            >
-              <Text fontFamily="Poppins" color="white" fontSize="9px" fontWeight="600">
-                E-BOOK GRATUITO
-              </Text>
-            </Box>
-          </Box>
+            objectFit="cover"
+          />
           <VStack align="start" gap="3" w="100%">
             <Text fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900" textAlign="center" w="100%">
               Receitas para Aproveitar o Momento!
@@ -798,7 +773,7 @@ export default function MobileLayout() {
             <Link href="https://www.instagram.com/nutriludiana" target="_blank" aria-label="Instagram">
               <FaInstagram color="white" size="1.5em" />
             </Link>
-            <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick} aria-label="WhatsApp">
               <FaWhatsapp color="white" size="1.5em" />
             </Link>
             <Link href="https://www.facebook.com/share/1GRdgdEPzt/" target="_blank" aria-label="Facebook">
