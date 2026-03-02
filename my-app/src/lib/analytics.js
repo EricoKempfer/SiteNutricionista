@@ -69,6 +69,14 @@ export const trackSectionView = (section) => {
   });
 };
 
+export const trackWhatsAppClick = () => {
+  event({
+    action: 'click',
+    category: 'WhatsApp',
+    label: 'Agendar Consulta',
+  });
+};
+
 export const trackEbookDownload = () => {
   event({
     action: 'download',
