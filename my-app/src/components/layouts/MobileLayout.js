@@ -9,8 +9,10 @@ import { IoWomanOutline } from "react-icons/io5";
 import { GiFruitBowl } from "react-icons/gi";
 import { VscVerifiedFilled } from "react-icons/vsc";
 import { useState } from "react";
-import { WHATSAPP_LINK, FAQ_DATA, TESTIMONIALS, BENEFICIOS_DATA_MOBILE } from "@/lib/constants";
+import { WHATSAPP_LINK, FAQ_DATA, TESTIMONIALS, BENEFICIOS_DATA_MOBILE, SOCIAL_LINKS } from "@/lib/constants";
 import { trackEbookDownload, trackWhatsAppClick } from "@/lib/analytics";
+import AnimatedSection from "@/components/AnimatedSection";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function MobileLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -182,7 +184,7 @@ export default function MobileLayout() {
       </Box>
 
       {/* ===== SOBRE MIM ===== */}
-      <VStack as="section" id="sobre-mim" py="8" px="4" gap="6">
+      <AnimatedSection as="section" id="sobre-mim" py="8" px="4" gap="6">
         <VStack gap="2">
           <Text as="h2" fontFamily="Poppins" fontSize="28px" fontWeight="600" textShadow="2px 2px 4px rgba(0,0,0,0.1)" color="#93b2bd" textAlign="center">
             Sobre Mim
@@ -215,10 +217,10 @@ export default function MobileLayout() {
             e dê o primeiro passo rumo a uma vida mais saudável.
           </Text>
         </VStack>
-      </VStack>
+      </AnimatedSection>
 
       {/* ===== COMO FUNCIONA A CONSULTA ===== */}
-      <VStack as="section" id="como-funciona" py="8" px="4" gap="6" bgGradient="to-b" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
+      <AnimatedSection as="section" id="como-funciona" py="8" px="4" gap="6" bgGradient="to-b" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
         <VStack gap="2">
           <Text as="h2" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd" textAlign="center">
             Como Funciona a Consulta
@@ -309,10 +311,10 @@ export default function MobileLayout() {
             &nbsp; Agendar Minha Consulta
           </Button>
         </Link>
-      </VStack>
+      </AnimatedSection>
 
       {/* ===== ESPECIALIDADES ===== */}
-      <VStack as="section" id="especialidades" py="8" px="4" gap="6">
+      <AnimatedSection as="section" id="especialidades" py="8" px="4" gap="6">
         <VStack gap="2">
           <Text as="h2" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd" textAlign="center">
             Especialidades em Nutrição
@@ -456,10 +458,10 @@ export default function MobileLayout() {
             </Text>
           </VStack>
         </VStack>
-      </VStack>
+      </AnimatedSection>
 
       {/* ===== BENEFÍCIOS ===== */}
-      <VStack as="section" py="8" px="4" gap="6" bgGradient="to-b" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
+      <AnimatedSection as="section" py="8" px="4" gap="6" bgGradient="to-b" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
         <VStack gap="2">
           <Text as="h2" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd" textAlign="center">
             Benefícios do Acompanhamento
@@ -506,10 +508,10 @@ export default function MobileLayout() {
             &nbsp; Começar Meu Acompanhamento
           </Button>
         </Link>
-      </VStack>
+      </AnimatedSection>
 
       {/* ===== DEPOIMENTOS ===== */}
-      <VStack as="section" py="8" px="4" gap="6">
+      <AnimatedSection as="section" py="8" px="4" gap="6">
         <VStack gap="2">
           <Text as="h2" textAlign="center" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd">
             Depoimentos
@@ -571,10 +573,10 @@ export default function MobileLayout() {
             ))}
           </VStack>
         </Box>
-      </VStack>
+      </AnimatedSection>
 
       {/* ===== LOCALIZAÇÃO ===== */}
-      <VStack as="section" py="8" px="4" gap="6">
+      <AnimatedSection as="section" py="8" px="4" gap="6">
         <VStack gap="2">
           <Text as="h2" textAlign="center" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd">
             Localização em Chapecó – SC
@@ -596,10 +598,10 @@ export default function MobileLayout() {
             />
           </AspectRatio>
         </Box>
-      </VStack>
+      </AnimatedSection>
 
       {/* ===== REDES SOCIAIS ===== */}
-      <VStack as="section" py="8" px="4" gap="6" bgGradient="to-b" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
+      <AnimatedSection as="section" py="8" px="4" gap="6" bgGradient="to-b" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
         <VStack gap="2">
           <Text as="h2" textAlign="center" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd">
             Redes Sociais
@@ -607,7 +609,7 @@ export default function MobileLayout() {
           <Box w="80px" h="3px" bg="#93b2bd" borderRadius="md" />
         </VStack>
         <VStack gap="4" w="100%">
-          <Link href="https://www.instagram.com/nutriludiana" target="_blank" _hover={{ textDecoration: "none" }} aria-label="Instagram" w="100%">
+          <Link href={SOCIAL_LINKS.instagram} target="_blank" _hover={{ textDecoration: "none" }} aria-label="Instagram" w="100%">
             <Flex direction="row" alignItems="center" p="5" borderRadius="lg" boxShadow="lg" bg="white" w="100%" gap="4">
               <FaInstagram color="#93B2BD" size="2em" />
               <VStack align="start" gap="1">
@@ -625,7 +627,7 @@ export default function MobileLayout() {
               </VStack>
             </Flex>
           </Link>
-          <Link href="https://www.facebook.com/share/1GRdgdEPzt/" target="_blank" _hover={{ textDecoration: "none" }} aria-label="Facebook" w="100%">
+          <Link href={SOCIAL_LINKS.facebook} target="_blank" _hover={{ textDecoration: "none" }} aria-label="Facebook" w="100%">
             <Flex direction="row" alignItems="center" p="5" borderRadius="lg" boxShadow="lg" bg="white" w="100%" gap="4">
               <FaFacebook color="#93B2BD" size="2em" />
               <VStack align="start" gap="1">
@@ -635,10 +637,10 @@ export default function MobileLayout() {
             </Flex>
           </Link>
         </VStack>
-      </VStack>
+      </AnimatedSection>
 
       {/* ===== FAQ ===== */}
-      <VStack as="section" id="faq" py="8" px="4" gap="6" bgGradient="to-b" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
+      <AnimatedSection as="section" id="faq" py="8" px="4" gap="6" bgGradient="to-b" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
         <VStack gap="2">
           <Text as="h2" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd" textAlign="center">
             Perguntas Frequentes
@@ -686,10 +688,10 @@ export default function MobileLayout() {
             </Accordion.Item>
           ))}
         </Accordion.Root>
-      </VStack>
+      </AnimatedSection>
 
       {/* ===== EBOOK ===== */}
-      <VStack as="section" py="8" px="4" gap="6" bg="white">
+      <AnimatedSection as="section" py="8" px="4" gap="6" bg="white">
         <VStack gap="2">
           <Text as="h2" fontFamily="Poppins" fontSize="24px" fontWeight="700" color="#93b2bd" textAlign="center">
             Presente para Você! 🎉
@@ -749,7 +751,9 @@ export default function MobileLayout() {
             </Link>
           </VStack>
         </VStack>
-      </VStack>
+      </AnimatedSection>
+
+      <ScrollToTopButton />
 
       {/* ===== FOOTER COM NAP ===== */}
       <Box as="footer" py="6" px="4" bg="cyan.900" color="white">
@@ -770,13 +774,13 @@ export default function MobileLayout() {
             Emagrecimento | Diabetes | Saúde Feminina
           </Text>
           <HStack gap="4" mt="2">
-            <Link href="https://www.instagram.com/nutriludiana" target="_blank" aria-label="Instagram">
+            <Link href={SOCIAL_LINKS.instagram} target="_blank" aria-label="Instagram">
               <FaInstagram color="white" size="1.5em" />
             </Link>
             <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClick} aria-label="WhatsApp">
               <FaWhatsapp color="white" size="1.5em" />
             </Link>
-            <Link href="https://www.facebook.com/share/1GRdgdEPzt/" target="_blank" aria-label="Facebook">
+            <Link href={SOCIAL_LINKS.facebook} target="_blank" aria-label="Facebook">
               <FaFacebook color="white" size="1.5em" />
             </Link>
           </HStack>

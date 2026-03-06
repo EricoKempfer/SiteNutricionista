@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef, useCallback } from "react";
 import {
   Box, HStack, Text, Separator, Float, Image, Button, VStack,
   Avatar, RatingGroup, Stack, AspectRatio, Flex, Link, Accordion, Span,
@@ -8,11 +9,44 @@ import { MdOutlineBloodtype } from "react-icons/md";
 import { IoWomanOutline } from "react-icons/io5";
 import { GiFruitBowl } from "react-icons/gi";
 import { VscVerifiedFilled } from "react-icons/vsc";
-import { WHATSAPP_LINK, FAQ_DATA, TESTIMONIALS, BENEFICIOS_DATA } from "@/lib/constants";
+import { WHATSAPP_LINK, FAQ_DATA, TESTIMONIALS, BENEFICIOS_DATA, SOCIAL_LINKS } from "@/lib/constants";
 import { trackEbookDownload, trackWhatsAppClick } from "@/lib/analytics";
+import AnimatedSection from "@/components/AnimatedSection";
+
+
+const NAV_SECTIONS = ["inicio", "sobre-mim", "como-funciona", "especialidades", "depoimentos", "faq", "local"];
 
 export default function DesktopLayout() {
-  const handleScroll = (sectionId) => {
+  const [activeSection, setActiveSection] = useState("inicio");
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    const ids = NAV_SECTIONS.filter((s) => s !== "inicio");
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+    observerRef.current = new IntersectionObserver(handleIntersect, {
+      rootMargin: "-30% 0px -60% 0px",
+    });
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observerRef.current.observe(el);
+    });
+    const onScroll = () => {
+      if (window.scrollY < 200) setActiveSection("inicio");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      observerRef.current?.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  const handleScroll = useCallback((sectionId) => {
     if (sectionId === "inicio") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
@@ -21,7 +55,7 @@ export default function DesktopLayout() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  };
+  }, []);
 
   return (
     <Box as="main" bgColor="#ffffff" w="100%" minH="100vh">
@@ -106,33 +140,31 @@ export default function DesktopLayout() {
             />
           </HStack>
           <HStack as="nav" aria-label="Navegação principal">
-            <Text cursor="pointer" onClick={() => handleScroll("inicio")} _hover={{ color: "#93B2BD" }}>
-              Início
-            </Text>
-            <Separator orientation="vertical" height="4" />
-            <Text cursor="pointer" onClick={() => handleScroll("sobre-mim")} _hover={{ color: "#93B2BD" }}>
-              Sobre Mim
-            </Text>
-            <Separator orientation="vertical" height="4" />
-            <Text cursor="pointer" onClick={() => handleScroll("como-funciona")} _hover={{ color: "#93B2BD" }}>
-              Como Funciona
-            </Text>
-            <Separator orientation="vertical" height="4" />
-            <Text cursor="pointer" onClick={() => handleScroll("especialidades")} _hover={{ color: "#93B2BD" }}>
-              Especialidades
-            </Text>
-            <Separator orientation="vertical" height="4" />
-            <Text cursor="pointer" onClick={() => handleScroll("depoimentos")} _hover={{ color: "#93B2BD" }}>
-              Depoimentos
-            </Text>
-            <Separator orientation="vertical" height="4" />
-            <Text cursor="pointer" onClick={() => handleScroll("faq")} _hover={{ color: "#93B2BD" }}>
-              FAQ
-            </Text>
-            <Separator orientation="vertical" height="4" />
-            <Text cursor="pointer" onClick={() => handleScroll("local")} _hover={{ color: "#93B2BD" }}>
-              Local
-            </Text>
+            {[
+              { id: "inicio", label: "Início" },
+              { id: "sobre-mim", label: "Sobre Mim" },
+              { id: "como-funciona", label: "Como Funciona" },
+              { id: "especialidades", label: "Especialidades" },
+              { id: "depoimentos", label: "Depoimentos" },
+              { id: "faq", label: "FAQ" },
+              { id: "local", label: "Local" },
+            ].map(({ id, label }, i, arr) => (
+              <Box key={id} display="flex" alignItems="center" gap="0">
+                <Text
+                  cursor="pointer"
+                  onClick={() => handleScroll(id)}
+                  color={activeSection === id ? "#93B2BD" : undefined}
+                  fontWeight={activeSection === id ? "700" : undefined}
+                  borderBottom={activeSection === id ? "2px solid #93B2BD" : "2px solid transparent"}
+                  pb="2px"
+                  transition="all 0.25s"
+                  _hover={{ color: "#93B2BD" }}
+                >
+                  {label}
+                </Text>
+                {i < arr.length - 1 && <Separator orientation="vertical" height="4" ml="3" />}
+              </Box>
+            ))}
           </HStack>
           <HStack>
             <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick}>
@@ -256,7 +288,7 @@ export default function DesktopLayout() {
       </Box>
 
       {/* ===== SOBRE MIM ===== */}
-      <Box as="section" id="sobre-mim" py="5%" w="100%">
+      <AnimatedSection as="section" id="sobre-mim" py="5%" w="100%">
         <HStack w="100%" display="flex" alignItems="center" justifyContent="center" gap="5%">
           <Image
             h="450px"
@@ -294,10 +326,10 @@ export default function DesktopLayout() {
             </Text>
           </Box>
         </HStack>
-      </Box>
+      </AnimatedSection>
 
       {/* ===== COMO FUNCIONA A CONSULTA ===== */}
-      <Box as="section" id="como-funciona" py="5%" w="100%" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
+      <AnimatedSection as="section" id="como-funciona" py="5%" w="100%" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
         <VStack w="100%" gap="8">
           <VStack gap="2">
             <Text as="h2" fontFamily="Poppins" fontSize="42px" fontWeight="700" color="#93b2bd" textShadow="2px 2px 4px rgba(0,0,0,0.1)" textAlign="center">
@@ -423,10 +455,10 @@ export default function DesktopLayout() {
             </Button>
           </Link>
         </VStack>
-      </Box>
+      </AnimatedSection>
 
       {/* ===== ESPECIALIDADES ===== */}
-      <Box as="section" id="especialidades" py="5%" w="100%">
+      <AnimatedSection as="section" id="especialidades" py="5%" w="100%">
         <VStack w="100%" gap="8">
           <VStack gap="2">
             <Text as="h2" fontFamily="Poppins" fontSize="42px" fontWeight="700" color="#93b2bd" textAlign="center">
@@ -581,10 +613,10 @@ export default function DesktopLayout() {
             </VStack>
           </HStack>
         </VStack>
-      </Box>
+      </AnimatedSection>
 
       {/* ===== BENEFÍCIOS DO ACOMPANHAMENTO ===== */}
-      <Box as="section" py="5%" w="100%" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
+      <AnimatedSection as="section" py="5%" w="100%" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
         <VStack w="100%" gap="8">
           <VStack gap="2">
             <Text as="h2" fontFamily="Poppins" fontSize="42px" fontWeight="700" color="#93b2bd" textAlign="center">
@@ -641,10 +673,10 @@ export default function DesktopLayout() {
             </Button>
           </Link>
         </VStack>
-      </Box>
+      </AnimatedSection>
 
       {/* ===== DEPOIMENTOS ===== */}
-      <Box as="section" py="5%" w="100%">
+      <AnimatedSection as="section" py="5%" w="100%">
         <VStack gap="6">
           <Text as="h2" textAlign="center" fontFamily="Poppins" fontSize="42px" fontWeight="700" textShadow="2px 2px 4px rgba(0,0,0,0.1)" color="#93b2bd">
             Depoimentos
@@ -740,10 +772,10 @@ export default function DesktopLayout() {
             ))}
           </HStack>
         </Box>
-      </Box>
+      </AnimatedSection>
 
       {/* ===== LOCALIZAÇÃO ===== */}
-      <Box as="section" py="5%" w="100%">
+      <AnimatedSection as="section" py="5%" w="100%">
         <VStack gap="6">
           <VStack gap="2">
             <Text as="h2" textAlign="center" fontFamily="Poppins" fontSize="42px" fontWeight="700" textShadow="2px 2px 4px rgba(0,0,0,0.1)" color="#93b2bd">
@@ -767,10 +799,10 @@ export default function DesktopLayout() {
             </AspectRatio>
           </Box>
         </VStack>
-      </Box>
+      </AnimatedSection>
 
       {/* ===== REDES SOCIAIS ===== */}
-      <Box as="section" py="5%" w="100%" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
+      <AnimatedSection as="section" py="5%" w="100%" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
         <VStack gap="6">
           <Text as="h2" textAlign="center" fontFamily="Poppins" fontSize="42px" fontWeight="700" color="#93b2bd" textShadow="2px 2px 4px rgba(0,0,0,0.2)">
             Redes Sociais
@@ -778,7 +810,7 @@ export default function DesktopLayout() {
           <Box w="200px" h="3px" bg="#93b2bd" borderRadius="md" />
         </VStack>
         <Flex justifyContent="center" alignItems="center" mt="8" gap={6}>
-          <Link href="https://www.instagram.com/nutriludiana" target="_blank" _hover={{ textDecoration: "none" }} aria-label="Instagram da Nutricionista Ludiana Campos">
+          <Link href={SOCIAL_LINKS.instagram} target="_blank" _hover={{ textDecoration: "none" }} aria-label="Instagram da Nutricionista Ludiana Campos">
             <Flex
               direction="column"
               alignItems="center"
@@ -826,7 +858,7 @@ export default function DesktopLayout() {
               </Text>
             </Flex>
           </Link>
-          <Link href="https://www.facebook.com/share/1GRdgdEPzt/" target="_blank" _hover={{ textDecoration: "none" }} aria-label="Facebook da Nutricionista Ludiana Campos">
+          <Link href={SOCIAL_LINKS.facebook} target="_blank" _hover={{ textDecoration: "none" }} aria-label="Facebook da Nutricionista Ludiana Campos">
             <Flex
               direction="column"
               alignItems="center"
@@ -851,10 +883,10 @@ export default function DesktopLayout() {
             </Flex>
           </Link>
         </Flex>
-      </Box>
+      </AnimatedSection>
 
       {/* ===== FAQ ===== */}
-      <Box as="section" id="faq" py="5%" w="100%" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
+      <AnimatedSection as="section" id="faq" py="5%" w="100%" bgGradient="to-r" gradientFrom="#E9EEF2" gradientTo="#F8F9FB">
         <VStack w="100%" gap="8">
           <VStack gap="2">
             <Text as="h2" fontFamily="Poppins" fontSize="42px" fontWeight="700" color="#93b2bd" textAlign="center">
@@ -904,10 +936,10 @@ export default function DesktopLayout() {
             ))}
           </Accordion.Root>
         </VStack>
-      </Box>
+      </AnimatedSection>
 
       {/* ===== EBOOK ===== */}
-      <Box as="section" py="5%" w="100%" bg="white">
+      <AnimatedSection as="section" py="5%" w="100%" bg="white">
         <VStack w="100%" gap="8" alignItems="center">
           <VStack gap="2">
             <Text as="h2" fontFamily="Poppins" fontSize="42px" fontWeight="700" color="#93b2bd" textAlign="center">
@@ -974,7 +1006,9 @@ export default function DesktopLayout() {
             </VStack>
           </Box>
         </VStack>
-      </Box>
+      </AnimatedSection>
+
+
 
       {/* ===== FOOTER COM NAP (Name, Address, Phone) ===== */}
       <Box as="footer" py="8" px="8" bg="cyan.900" color="white">
@@ -1004,13 +1038,13 @@ export default function DesktopLayout() {
               WhatsApp: (49) 99823-5398
             </Text>
             <HStack gap="4" mt="2">
-              <Link href="https://www.instagram.com/nutriludiana" target="_blank" aria-label="Instagram">
+              <Link href={SOCIAL_LINKS.instagram} target="_blank" aria-label="Instagram">
                 <FaInstagram color="white" size="1.5em" />
               </Link>
               <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" onClick={trackWhatsAppClick}>
                 <FaWhatsapp color="white" size="1.5em" />
               </Link>
-              <Link href="https://www.facebook.com/share/1GRdgdEPzt/" target="_blank" aria-label="Facebook">
+              <Link href={SOCIAL_LINKS.facebook} target="_blank" aria-label="Facebook">
                 <FaFacebook color="white" size="1.5em" />
               </Link>
             </HStack>
