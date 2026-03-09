@@ -134,7 +134,7 @@ export default function DesktopLayout() {
             <Image
               ml="2%"
               h="40px"
-              src="/logonutr.jpg"
+              src="/logonutr.webp"
               alt="Logo Nutricionista Ludiana Campos - Chapecó SC"
               loading="eager"
             />
@@ -193,7 +193,7 @@ export default function DesktopLayout() {
         justifyContent="center"
         alignItems="center"
         bgColor={"#e4e4e4"}
-        bgImage={"url(/BannerNutricionista.jpg)"}
+        bgImage={"url(/BannerNutricionista.webp)"}
         bgSize="cover"
         bgPosition="center"
         position="relative"
@@ -292,7 +292,7 @@ export default function DesktopLayout() {
         <HStack w="100%" display="flex" alignItems="center" justifyContent="center" gap="5%">
           <Image
             h="450px"
-            src="/nutriciSobreMim3.jpg"
+            src="/nutriciSobreMim3.webp"
             borderRadius="35% 65% 35% 65% / 35% 65% 35% 65%"
             alt="Ludiana Campos - Nutricionista clínica especializada em emagrecimento e diabetes em Chapecó SC"
             loading="lazy"

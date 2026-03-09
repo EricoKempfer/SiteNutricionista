@@ -1,30 +1,10 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
 import { SITE_URL } from "@/lib/constants";
-import { GA_TRACKING_ID } from "@/lib/analytics";
 
 export default function Document() {
   return (
     <Html lang="pt-BR" dir="ltr">
       <Head>
-        {/* Google Analytics */}
-        <Script 
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} 
-          strategy="afterInteractive" 
-        />
-        <Script 
-          id="google-analytics" 
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_TRACKING_ID}');
-            `
-          }}
-        />
-
         {/* Charset */}
         <meta charSet="utf-8" />
 
@@ -35,19 +15,15 @@ export default function Document() {
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
 
-        {/* Preconnect for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        {/* Preconnect for performance - only external origins actually used */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-
-        {/* DNS Prefetch */}
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
         {/* Favicon / Ícone no Google */}
-        <link rel="icon" href="/icone-fruta.jpg" type="image/jpeg" />
-        <link rel="shortcut icon" href="/icone-fruta.jpg" type="image/jpeg" />
-        <link rel="apple-touch-icon" href="/icone-fruta.jpg" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
