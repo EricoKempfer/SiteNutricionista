@@ -55,7 +55,7 @@ export default function MobileLayout() {
           <Button onClick={() => setIsMenuOpen(!isMenuOpen)} variant="ghost" size="sm" aria-label="Abrir menu de navegação">
             <FaBars color="#93B2BD" />
           </Button>
-          <Image h="35px" src="/logonutr.jpg" alt="Logo Nutricionista Ludiana Campos - Chapecó SC" loading="eager" />
+          <Image h="35px" src="/logonutr.webp" alt="Logo Nutricionista Ludiana Campos - Chapecó SC" loading="eager" />
           <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick}>
             <Button
               variant="outline"
@@ -109,7 +109,7 @@ export default function MobileLayout() {
         justifyContent="center"
         alignItems="center"
         bgColor="#e4e4e4"
-        bgImage="url(/BannerNutricionista.jpg)"
+        bgImage="url(/BannerNutricionista.webp)"
         bgSize="cover"
         bgPosition="center"
         position="relative"
@@ -194,7 +194,7 @@ export default function MobileLayout() {
         <Image
           w="75%"
           maxW="280px"
-          src="/nutriciSobreMim3.jpg"
+          src="/nutriciSobreMim3.webp"
           borderRadius="35% 65% 35% 65% / 35% 65% 35% 65%"
           alt="Ludiana Campos - Nutricionista clínica especializada em emagrecimento e diabetes em Chapecó SC"
           loading="lazy"

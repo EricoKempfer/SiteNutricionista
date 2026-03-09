@@ -1,14 +1,8 @@
 import { Box } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
 import SEO from "../components/SEO";
 import DesktopLayout from "../components/layouts/DesktopLayout";
-
-// Mobile layout loaded only when needed (code splitting)
-const MobileLayout = dynamic(() => import("../components/layouts/MobileLayout"), {
-  ssr: false,
-  loading: () => null,
-});
+import MobileLayout from "../components/layouts/MobileLayout";
 
 export default function Home() {
   // Default to false (desktop) so SSR always renders full content for Googlebot

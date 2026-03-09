@@ -86,14 +86,16 @@ const SEO = ({
       <meta name="apple-mobile-web-app-capable" content="yes" />
 
       {/* Favicon */}
-      <link rel="icon" type="image/jpg" href="/logonutr.jpg" />
-      <link rel="apple-touch-icon" href="/logonutr.jpg" />
+      <link rel="icon" href="/favicon.ico" sizes="48x48" />
+      <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 
-      {/* Preload LCP image (hero banner) */}
+      {/* Preload LCP image (hero banner) - optimized WebP */}
       <link
         rel="preload"
         as="image"
-        href="/BannerNutricionista.jpg"
+        href="/BannerNutricionista.webp"
+        type="image/webp"
         fetchPriority="high"
       />
 
