@@ -6,10 +6,11 @@ const SEO = ({
   description = "Nutricionista clínica em Chapecó, Santa Catarina. Especialista em emagrecimento saudável, controle de diabetes e saúde feminina. CRN 10 9645. Plano alimentar personalizado. Agende sua consulta!",
   keywords = "nutricionista em chapecó, nutricionista chapecó sc, nutricionista para emagrecimento chapecó, nutricionista para diabetes chapecó, nutricionista saúde feminina chapecó, consulta nutricionista chapecó, nutrição clínica chapecó, ludiana campos nutricionista, CRN 10 9645, dieta para emagrecer chapecó, controle diabetes alimentação, plano alimentar personalizado chapecó, acompanhamento nutricional chapecó, nutricionista santa catarina",
   canonical = SITE_URL,
-  ogImage = `${SITE_URL}/BannerNutricionista.jpg`,
+  ogImage = `${SITE_URL}/BannerNutricionista.webp`,
   ogType = "website",
+  schema = null,
+  noFaqSchema = false,
 }) => {
-  // Build FAQ schema from single source of truth
   const structuredFAQ = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -100,10 +101,20 @@ const SEO = ({
       />
 
       {/* FAQ Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredFAQ) }}
-      />
+      {!noFaqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredFAQ) }}
+        />
+      )}
+
+      {/* Custom Schema */}
+      {schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      )}
     </Head>
   );
 };

@@ -2,7 +2,9 @@ import {
   Box, HStack, Text, Image, Button, VStack,
   Avatar, RatingGroup, Stack, AspectRatio, Flex, Link, Accordion, Span,
 } from "@chakra-ui/react";
-import { FaInstagram, FaWhatsapp, FaFacebook, FaBars, FaCheckCircle, FaUserMd, FaClipboardList, FaCalendarCheck } from "react-icons/fa";
+import NextLink from "next/link";
+import { FaInstagram, FaWhatsapp, FaFacebook, FaBars, FaCheckCircle, FaUserMd, FaClipboardList, FaCalendarCheck, FaArrowRight } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa6";
 import { FaHeartPulse } from "react-icons/fa6";
 import { MdOutlineBloodtype } from "react-icons/md";
 import { IoWomanOutline } from "react-icons/io5";
@@ -88,8 +90,8 @@ export default function MobileLayout() {
             <Text cursor="pointer" onClick={() => handleScroll("como-funciona")} textAlign="center" role="menuitem">Como Funciona</Text>
             <Text cursor="pointer" onClick={() => handleScroll("especialidades")} textAlign="center" role="menuitem">Especialidades</Text>
             <Text cursor="pointer" onClick={() => handleScroll("depoimentos")} textAlign="center" role="menuitem">Depoimentos</Text>
-            <Text cursor="pointer" onClick={() => handleScroll("faq")} textAlign="center" role="menuitem">FAQ</Text>
             <Text cursor="pointer" onClick={() => handleScroll("local")} textAlign="center" role="menuitem">Local</Text>
+            <Text cursor="pointer" onClick={() => handleScroll("faq")} textAlign="center" role="menuitem">FAQ</Text>
             <Link href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" _hover={{ textDecoration: "none" }} onClick={trackWhatsAppClick} w="100%">
               <Button variant="outline" color="#93B2BD" borderColor="#93B2BD" size="sm" w="100%" _hover={{ bgColor: "#93B2BD", color: "white" }}>
                 Agende sua Consulta
@@ -327,134 +329,67 @@ export default function MobileLayout() {
 
         <VStack gap="4" w="100%">
           {/* Diabetes */}
-          <VStack
-            w="100%"
-            p="6"
-            borderRadius="xl"
-            bg="white"
-            borderWidth="1px"
-            borderColor="gray.100"
-            boxShadow="0 4px 20px rgba(147, 178, 189, 0.15)"
-            textAlign="center"
-            gap="3"
-          >
-            <Box
-              w="70px"
-              h="70px"
-              borderRadius="50%"
-              bg="white"
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              boxShadow="0 8px 24px rgba(147, 178, 189, 0.3)"
-            >
-              <MdOutlineBloodtype color="#93B2BD" size="2.5em" />
-            </Box>
-            <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900">
-              Controle de Diabetes
-            </Text>
-            <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-              Tratamento nutricional para diabetes tipo 1 e tipo 2 e diabetes gestacional. Controle glicêmico através de alimentação
-              adequada, contagem de carboidratos e educação nutricional.
-            </Text>
-          </VStack>
+          <Link asChild _hover={{ textDecoration: "none" }} w="100%">
+            <NextLink href="/diabetes-chapeco">
+              <VStack w="100%" p="6" borderRadius="xl" bg="white" borderWidth="1px" borderColor="gray.100" boxShadow="0 4px 20px rgba(147, 178, 189, 0.15)" textAlign="center" gap="3" transition="all 0.3s" _hover={{ boxShadow: "0 8px 30px rgba(147, 178, 189, 0.3)", borderColor: "#93B2BD" }} cursor="pointer">
+                <Box w="70px" h="70px" borderRadius="50%" bg="white" display="flex" justifyContent="center" alignItems="center" boxShadow="0 8px 24px rgba(147, 178, 189, 0.3)">
+                  <MdOutlineBloodtype color="#93B2BD" size="2.5em" />
+                </Box>
+                <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900">Controle de Diabetes</Text>
+                <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
+                  Tratamento nutricional para diabetes tipo 1 e tipo 2 e diabetes gestacional. Controle glicêmico através de alimentação adequada.
+                </Text>
+                <HStack color="#93B2BD" fontSize="13px" fontWeight="600" gap="1" fontFamily="Poppins">
+                  <Text>Saiba mais</Text><FaArrowRight size="0.7em" />
+                </HStack>
+              </VStack>
+            </NextLink>
+          </Link>
 
           {/* Emagrecimento */}
-          <VStack
-            w="100%"
-            p="6"
-            borderRadius="xl"
-            bg="white"
-            borderWidth="1px"
-            borderColor="gray.100"
-            boxShadow="0 4px 20px rgba(147, 178, 189, 0.15)"
-            textAlign="center"
-            gap="3"
-          >
-            <Box
-              w="70px"
-              h="70px"
-              borderRadius="50%"
-              bg="#93B2BD"
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              boxShadow="0 8px 24px rgba(147, 178, 189, 0.3)"
-            >
-              <FaHeartPulse color="white" size="2.5em" />
-            </Box>
-            <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900">
-              Emagrecimento Saudável
-            </Text>
-            <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-              Programa de emagrecimento sem dietas restritivas. Planos alimentares equilibrados para perda de
-              peso sustentável, preservando massa muscular.
-            </Text>
-          </VStack>
+          <Link asChild _hover={{ textDecoration: "none" }} w="100%">
+            <NextLink href="/emagrecimento-chapeco">
+              <VStack w="100%" p="6" borderRadius="xl" bg="white" borderWidth="1px" borderColor="gray.100" boxShadow="0 4px 20px rgba(147, 178, 189, 0.15)" textAlign="center" gap="3" transition="all 0.3s" _hover={{ boxShadow: "0 8px 30px rgba(147, 178, 189, 0.3)", borderColor: "#93B2BD" }} cursor="pointer">
+                <Box w="70px" h="70px" borderRadius="50%" bg="#93B2BD" display="flex" justifyContent="center" alignItems="center" boxShadow="0 8px 24px rgba(147, 178, 189, 0.3)">
+                  <FaHeartPulse color="white" size="2.5em" />
+                </Box>
+                <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900">Emagrecimento Saudável</Text>
+                <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
+                  Programa de emagrecimento sem dietas restritivas. Planos alimentares equilibrados para perda de peso sustentável.
+                </Text>
+                <HStack color="#93B2BD" fontSize="13px" fontWeight="600" gap="1" fontFamily="Poppins">
+                  <Text>Saiba mais</Text><FaArrowRight size="0.7em" />
+                </HStack>
+              </VStack>
+            </NextLink>
+          </Link>
 
           {/* Saúde Feminina */}
-          <VStack
-            w="100%"
-            p="6"
-            borderRadius="xl"
-            bg="white"
-            borderWidth="1px"
-            borderColor="gray.100"
-            boxShadow="0 4px 20px rgba(147, 178, 189, 0.15)"
-            textAlign="center"
-            gap="3"
-          >
-            <Box
-              w="70px"
-              h="70px"
-              borderRadius="50%"
-              bg="white"
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              boxShadow="0 8px 24px rgba(147, 178, 189, 0.3)"
-            >
-              <IoWomanOutline color="#93B2BD" size="2.5em" />
-            </Box>
-            <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900">
-              Saúde Feminina
-            </Text>
-            <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-              Nutrição especializada para mulheres: SOP, endometriose, TPM, menopausa e gestação. Alimentação
-              estratégica para equilíbrio hormonal e bem-estar.
-            </Text>
-          </VStack>
+          <Link asChild _hover={{ textDecoration: "none" }} w="100%">
+            <NextLink href="/saude-feminina-chapeco">
+              <VStack w="100%" p="6" borderRadius="xl" bg="white" borderWidth="1px" borderColor="gray.100" boxShadow="0 4px 20px rgba(147, 178, 189, 0.15)" textAlign="center" gap="3" transition="all 0.3s" _hover={{ boxShadow: "0 8px 30px rgba(147, 178, 189, 0.3)", borderColor: "#93B2BD" }} cursor="pointer">
+                <Box w="70px" h="70px" borderRadius="50%" bg="white" display="flex" justifyContent="center" alignItems="center" boxShadow="0 8px 24px rgba(147, 178, 189, 0.3)">
+                  <IoWomanOutline color="#93B2BD" size="2.5em" />
+                </Box>
+                <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900">Saúde Feminina</Text>
+                <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
+                  Nutrição especializada para mulheres: SOP, endometriose, TPM, menopausa e gestação. Equilíbrio hormonal e bem-estar.
+                </Text>
+                <HStack color="#93B2BD" fontSize="13px" fontWeight="600" gap="1" fontFamily="Poppins">
+                  <Text>Saiba mais</Text><FaArrowRight size="0.7em" />
+                </HStack>
+              </VStack>
+            </NextLink>
+          </Link>
 
           {/* Saúde Gastrointestinal */}
-          <VStack
-            w="100%"
-            p="6"
-            borderRadius="xl"
-            bg="white"
-            borderWidth="1px"
-            borderColor="gray.100"
-            boxShadow="0 4px 20px rgba(147, 178, 189, 0.15)"
-            textAlign="center"
-            gap="3"
-          >
-            <Box
-              w="70px"
-              h="70px"
-              borderRadius="50%"
-              bg="#93B2BD"
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              boxShadow="0 8px 24px rgba(147, 178, 189, 0.3)"
-            >
+          <VStack w="100%" p="6" borderRadius="xl" bg="white" borderWidth="1px" borderColor="gray.100" boxShadow="0 4px 20px rgba(147, 178, 189, 0.15)" textAlign="center" gap="3">
+            <Box w="70px" h="70px" borderRadius="50%" bg="#93B2BD" display="flex" justifyContent="center" alignItems="center" boxShadow="0 8px 24px rgba(147, 178, 189, 0.3)">
               <GiFruitBowl color="white" size="2.5em" />
             </Box>
-            <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900">
-              Saúde Gastrointestinal
-            </Text>
+            <Text as="h3" fontFamily="Poppins" fontSize="18px" fontWeight="700" color="cyan.900">Saúde Gastrointestinal</Text>
             <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" lineHeight="1.7">
-              Tratamento nutricional para distúrbios gastrointestinais: gastrite, refluxo, síndrome do intestino irritável
-              e intolerâncias alimentares.
+              Tratamento nutricional para distúrbios gastrointestinais: gastrite, refluxo, síndrome do intestino irritável e intolerâncias alimentares.
             </Text>
           </VStack>
         </VStack>
@@ -688,6 +623,96 @@ export default function MobileLayout() {
             </Accordion.Item>
           ))}
         </Accordion.Root>
+      </AnimatedSection>
+
+      {/* ===== BLOG ===== */}
+      <AnimatedSection as="section" py="8" px="4" gap="6" bg="white">
+        <VStack gap="2">
+          <Text as="h2" fontFamily="Poppins" fontSize="26px" fontWeight="700" color="#93b2bd" textAlign="center">
+            Blog de Nutrição
+          </Text>
+          <Box w="80px" h="3px" bg="#93b2bd" borderRadius="md" />
+          <Text fontFamily="Poppins" fontSize="14px" color="#5C637C" textAlign="center" px="2" mt="2">
+            Artigos sobre alimentação saudável e saúde.
+          </Text>
+        </VStack>
+        <VStack gap="4" w="100%">
+          {[
+            {
+              href: "/blog/como-emagrecer-de-forma-saudavel",
+              title: "Como Emagrecer de Forma Saudável",
+              desc: "Estratégias baseadas em evidências para perder peso de forma sustentável.",
+            },
+            {
+              href: "/blog/alimentacao-para-diabetes-tipo-2",
+              title: "Alimentação para Diabetes Tipo 2",
+              desc: "Guia prático sobre alimentação para controle do diabetes tipo 2.",
+            },
+            {
+              href: "/blog/nutricao-saude-feminina",
+              title: "Nutrição e Saúde Feminina",
+              desc: "Como a alimentação ajuda no equilíbrio hormonal e bem-estar feminino.",
+            },
+          ].map(({ href, title, desc }) => (
+            <Link asChild key={href} _hover={{ textDecoration: "none" }} w="100%">
+              <NextLink href={href}>
+                <HStack
+                  w="100%"
+                  p="5"
+                  borderRadius="xl"
+                  bg="white"
+                  borderWidth="1px"
+                  borderColor="gray.100"
+                  boxShadow="0 4px 20px rgba(147, 178, 189, 0.15)"
+                  gap="4"
+                  _hover={{ boxShadow: "0 8px 30px rgba(147, 178, 189, 0.3)" }}
+                  transition="all 0.3s"
+                >
+                  <Box
+                    minW="45px"
+                    h="45px"
+                    borderRadius="50%"
+                    bg="#93B2BD"
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
+                    <FaBookOpen color="white" size="1.2em" />
+                  </Box>
+                  <VStack align="start" gap="1" flex="1">
+                    <Text fontFamily="Poppins" fontSize="15px" fontWeight="700" color="cyan.900" lineHeight="1.3">
+                      {title}
+                    </Text>
+                    <Text fontFamily="Poppins" fontSize="13px" color="#5C637C" lineHeight="1.5">
+                      {desc}
+                    </Text>
+                    <HStack color="#93B2BD" fontFamily="Poppins" fontSize="13px" fontWeight="600" gap="1">
+                      <Text>Leia mais</Text>
+                      <FaArrowRight size="0.7em" />
+                    </HStack>
+                  </VStack>
+                </HStack>
+              </NextLink>
+            </Link>
+          ))}
+        </VStack>
+        <Link asChild _hover={{ textDecoration: "none" }}>
+          <NextLink href="/blog">
+            <Button
+              size="md"
+              variant="outline"
+              color="#93B2BD"
+              borderColor="#93B2BD"
+              borderRadius="50px"
+              px="6"
+              fontWeight="bold"
+              _hover={{ bgColor: "#93B2BD", color: "white" }}
+              transition="all 0.3s"
+            >
+              Ver Todos os Artigos
+            </Button>
+          </NextLink>
+        </Link>
       </AnimatedSection>
 
       {/* ===== EBOOK ===== */}
