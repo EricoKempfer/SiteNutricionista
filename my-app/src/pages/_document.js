@@ -34,7 +34,7 @@ export default function Document() {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": "MedicalBusiness",
               "@id": `${SITE_URL}/#localbusiness`,
               name: "Nutricionista Ludiana Campos",
               alternateName: "Ludiana Campos Nutricionista Clínica",
