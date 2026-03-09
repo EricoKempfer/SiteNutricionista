@@ -13,7 +13,6 @@ import { WHATSAPP_LINK, FAQ_DATA, TESTIMONIALS, BENEFICIOS_DATA, SOCIAL_LINKS } 
 import { trackEbookDownload, trackWhatsAppClick } from "@/lib/analytics";
 import AnimatedSection from "@/components/AnimatedSection";
 
-
 const NAV_SECTIONS = ["inicio", "sobre-mim", "como-funciona", "especialidades", "depoimentos", "faq", "local"];
 
 export default function DesktopLayout() {
