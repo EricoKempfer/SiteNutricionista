@@ -78,7 +78,7 @@ const SEO = ({
       <meta name="business:contact_data:locality" content="Chapecó" />
       <meta name="business:contact_data:region" content="Santa Catarina" />
       <meta name="business:contact_data:country_name" content="Brasil" />
-      <meta name="business:contact_data:phone_number" content="+55-49-99823-5398" />
+      <meta name="business:contact_data:phone_number" content="+55-49-99920-1291" />
 
       {/* Theme Color */}
       <meta name="theme-color" content="#93B2BD" />

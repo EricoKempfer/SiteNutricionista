@@ -41,7 +41,7 @@ export default function Document() {
               description:
                 "Nutricionista clínica em Chapecó, Santa Catarina, especializada em emagrecimento saudável, controle de diabetes e saúde feminina. Atendimento personalizado com planos alimentares individualizados. CRN 10 9645.",
               url: SITE_URL,
-              telephone: "+5549998235398",
+              telephone: "+5549999201291",
               image: [
                 `${SITE_URL}/logonutr.jpg`,
                 `${SITE_URL}/BannerNutricionista.jpg`,
@@ -129,7 +129,7 @@ export default function Document() {
               sameAs: [
                 "https://www.instagram.com/nutriludiana",
                 "https://www.facebook.com/share/1GRdgdEPzt/",
-                "https://wa.me/5549998235398",
+                "https://wa.me/5549999201291",
               ],
               aggregateRating: {
                 "@type": "AggregateRating",
@@ -189,7 +189,7 @@ export default function Document() {
                 "Nutricionista clínica em Chapecó, SC, especializada em emagrecimento saudável, controle de diabetes e saúde feminina. CRN 10 9645.",
               url: SITE_URL,
               image: `${SITE_URL}/nutriciSobreMim3.jpg`,
-              telephone: "+5549998235398",
+              telephone: "+5549999201291",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Chapecó",
