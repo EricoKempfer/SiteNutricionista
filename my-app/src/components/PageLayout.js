@@ -111,7 +111,7 @@ export default function PageLayout({ children }) {
             </VStack>
             <VStack align="start" gap="2">
               <Text fontWeight="700" fontSize="lg">Contato</Text>
-              <Text fontSize="sm" color="gray.300">(49) 99823-5398</Text>
+              <Text fontSize="sm" color="gray.300">(49) 99920-1291</Text>
               <Text fontSize="sm" color="gray.300">Chapecó, Santa Catarina</Text>
               <HStack gap="3" mt="1">
                 <Link href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram size="1.3em" /></Link>

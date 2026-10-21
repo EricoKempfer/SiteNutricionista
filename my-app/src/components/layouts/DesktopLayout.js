@@ -1115,7 +1115,7 @@ export default function DesktopLayout() {
               Chapecó, Santa Catarina – Brasil
             </Text>
             <Text fontFamily="Poppins" fontSize="14px" opacity="0.8">
-              WhatsApp: (49) 99823-5398
+              WhatsApp: (49) 99920-1291
             </Text>
             <HStack gap="4" mt="2">
               <Link href={SOCIAL_LINKS.instagram} target="_blank" aria-label="Instagram">

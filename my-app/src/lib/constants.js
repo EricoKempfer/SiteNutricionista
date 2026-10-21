@@ -4,14 +4,14 @@
 export const SITE_URL = "https://nutriludiana.com.br";
 
 export const WHATSAPP_LINK =
-  "https://wa.me/5549998235398?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20agendar%20uma%20consulta%20nutricional.";
+  "https://wa.me/5549999201291?text=Olá%20Ludiana,%20vim%20pelo%20site!%20Gostaria%20de%20agendar%20uma%20consulta%20nutricional.";
 
-export const WHATSAPP_NUMBER = "(49) 99823-5398";
+export const WHATSAPP_NUMBER = "(49) 99920-1291";
 
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/nutriludiana",
   facebook: "https://www.facebook.com/share/1GRdgdEPzt/",
-  whatsapp: "https://wa.me/5549998235398",
+  whatsapp: "https://wa.me/5549999201291",
 };
 
 export const FAQ_DATA = [
